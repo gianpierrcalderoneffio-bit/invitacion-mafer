@@ -13,7 +13,7 @@
       --rojo-tinto: #5b0609;        /* Centro / Tarjetas */
       --rojo-profundo: #280103;     /* Fondo principal */
       --dorado-calido: #dbb782;     /* Bordes y Acentos */
-      --dorado-brillo: #f5d79e;     /* Destellos */
+      --dorado-brillo: #f8e1a6;     /* Destellos */
       --crema-marfil: #efe5d5;      /* Textos claros y tarjeta mensaje */
     }
 
@@ -25,47 +25,57 @@
 
     body {
       background-color: var(--rojo-profundo);
-      background-image: 
-        radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 85%),
-        radial-gradient(2px 2px at 20px 30px, var(--dorado-brillo), rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 150px 180px, var(--dorado-brillo), rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 280px 80px, var(--dorado-brillo), rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 320px 300px, var(--dorado-brillo), rgba(0,0,0,0));
-      background-repeat: repeat;
-      background-size: 100% 100%, 350px 350px, 300px 300px, 250px 250px, 400px 400px;
-      animation: floatSparkles 8s ease-in-out infinite alternate;
+      background-image: radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 85%);
       color: var(--dorado-calido);
       font-family: 'Cinzel', serif;
       text-align: center;
       padding-bottom: 60px;
       overflow-x: hidden;
+      position: relative;
     }
 
-    /* Animación de Destellos Mágicos en Fondo */
-    @keyframes floatSparkles {
-      0% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
-      100% { background-position: 0 0, -20px -30px, 15px -25px, -10px 20px, 25px -15px; }
+    /* EFECTO DE DESTELLOS Y DESTELLOS FLOTANTES EN EL FONDO */
+    .sparkle {
+      position: fixed;
+      color: var(--dorado-brillo);
+      font-size: 1.2rem;
+      pointer-events: none;
+      animation: twinkle 4s infinite ease-in-out;
+      z-index: 1;
+      opacity: 0.8;
     }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); filter: drop-shadow(0 0 2px var(--dorado-brillo)); }
+      50% { opacity: 1; transform: scale(1.3) rotate(15deg); filter: drop-shadow(0 0 12px var(--dorado-brillo)); }
+    }
+
+    .sp-1 { top: 10%; left: 8%; animation-delay: 0s; }
+    .sp-2 { top: 25%; right: 10%; animation-delay: 1s; }
+    .sp-3 { top: 45%; left: 5%; animation-delay: 2.2s; }
+    .sp-4 { top: 65%; right: 8%; animation-delay: 0.7s; }
+    .sp-5 { top: 85%; left: 12%; animation-delay: 1.5s; }
 
     .container {
       max-width: 480px;
       margin: 0 auto;
       padding: 15px;
       position: relative;
+      z-index: 2;
     }
 
     /* Corona Real con destello */
     .crown {
       font-size: 2.2rem;
       color: var(--dorado-brillo);
-      filter: drop-shadow(0 0 10px rgba(245, 215, 158, 0.7));
+      filter: drop-shadow(0 0 10px rgba(248, 225, 166, 0.8));
       margin-top: 10px;
       animation: sparkleGlow 3s infinite alternate;
     }
 
     @keyframes sparkleGlow {
       0% { filter: drop-shadow(0 0 4px rgba(219, 183, 130, 0.4)); transform: scale(1); }
-      100% { filter: drop-shadow(0 0 16px rgba(245, 215, 158, 0.95)); transform: scale(1.05); }
+      100% { filter: drop-shadow(0 0 18px rgba(248, 225, 166, 0.95)); transform: scale(1.06); }
     }
 
     /* Títulos Principales */
@@ -73,7 +83,7 @@
       font-family: 'Great Vibes', cursive;
       font-size: 3.8rem;
       color: var(--dorado-brillo);
-      text-shadow: 0 0 12px rgba(219, 183, 130, 0.6), 2px 2px 4px rgba(0,0,0,0.8);
+      text-shadow: 0 0 15px rgba(248, 225, 166, 0.7), 2px 2px 4px rgba(0,0,0,0.8);
       margin: 5px 0;
       font-weight: normal;
     }
@@ -82,7 +92,7 @@
       font-family: 'Great Vibes', cursive;
       font-size: 3.2rem;
       color: var(--dorado-brillo);
-      text-shadow: 0 0 15px rgba(245, 215, 158, 0.7), 2px 2px 4px rgba(0,0,0,0.9);
+      text-shadow: 0 0 18px rgba(248, 225, 166, 0.8), 2px 2px 4px rgba(0,0,0,0.9);
       margin: 12px 0;
       line-height: 1.25;
       font-weight: normal;
@@ -101,12 +111,12 @@
     .card-frame {
       background: linear-gradient(180deg, rgba(91, 6, 9, 0.92) 0%, rgba(40, 1, 3, 0.96) 100%);
       border: 2px solid var(--dorado-calido);
-      outline: 1px solid rgba(219, 183, 130, 0.3);
+      outline: 1px solid rgba(219, 183, 130, 0.35);
       outline-offset: -6px;
       border-radius: 20px;
       padding: 24px 20px;
       margin: 22px 0;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(219, 183, 130, 0.25);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 18px rgba(219, 183, 130, 0.3);
       position: relative;
     }
 
@@ -119,7 +129,7 @@
       border-radius: 20px;
       padding: 30px 22px;
       margin: 22px 0;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 18px rgba(219, 183, 130, 0.35);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 20px rgba(219, 183, 130, 0.4);
       position: relative;
     }
 
@@ -133,42 +143,37 @@
       text-align: center;
     }
 
-    /* IMAGEN DE LA ROSA (Sustituto de emoticones) */
+    /* IMAGEN DE LA ROSA (flor.jpeg) */
     .rose-image {
       width: 75px;
       height: 75px;
       object-fit: cover;
       border-radius: 50%;
       border: 2px solid var(--dorado-calido);
-      box-shadow: 0 0 14px rgba(245, 215, 158, 0.6);
+      box-shadow: 0 0 14px rgba(248, 225, 166, 0.7);
       margin: 8px auto 14px;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .rose-image:hover {
-      transform: scale(1.08);
-    }
-
-    .rose-image-large {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--dorado-calido);
-      box-shadow: 0 0 25px rgba(245, 215, 158, 0.8), inset 0 0 10px rgba(0,0,0,0.5);
-      margin: 15px auto;
       display: block;
     }
 
     .rose-image-divider {
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       object-fit: cover;
       border-radius: 50%;
       border: 1.5px solid var(--dorado-calido);
-      box-shadow: 0 0 12px rgba(219, 183, 130, 0.5);
-      margin: 15px auto;
+      box-shadow: 0 0 12px rgba(219, 183, 130, 0.6);
+      margin: 12px auto;
+      display: block;
+    }
+
+    .rose-image-large {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--dorado-calido);
+      box-shadow: 0 0 25px rgba(248, 225, 166, 0.85);
+      margin: 20px auto;
       display: block;
     }
 
@@ -237,12 +242,12 @@
     .name-badge {
       background: linear-gradient(180deg, rgba(91,6,9,0.95) 0%, rgba(40,1,3,0.98) 100%);
       border: 2px solid var(--dorado-calido);
-      outline: 1px solid rgba(219, 183, 130, 0.3);
+      outline: 1px solid rgba(219, 183, 130, 0.35);
       outline-offset: -6px;
       border-radius: 22px;
       padding: 24px 16px;
       margin: 22px 0;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 20px rgba(219, 183, 130, 0.25);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 20px rgba(219, 183, 130, 0.3);
     }
 
     /* Reloj de Cuenta Regresiva */
@@ -285,12 +290,12 @@
       color: var(--dorado-brillo);
       letter-spacing: 2px;
       font-weight: 700;
-      text-shadow: 0 0 10px rgba(245, 215, 158, 0.5);
+      text-shadow: 0 0 10px rgba(248, 225, 166, 0.6);
       margin-top: 4px;
       text-transform: uppercase;
     }
 
-    /* Botones Dorados con destello al presionar */
+    /* Botones Dorados */
     .btn-gold {
       display: inline-block;
       background: linear-gradient(135deg, var(--crema-marfil) 0%, var(--dorado-calido) 50%, #c49c63 100%);
@@ -324,6 +329,13 @@
 </head>
 <body>
 
+  <!-- DESTELLOS DORADOS PARPADEANTES EN EL FONDO -->
+  <div class="sparkle sp-1">✨</div>
+  <div class="sparkle sp-2">✦</div>
+  <div class="sparkle sp-3">✨</div>
+  <div class="sparkle sp-4">✦</div>
+  <div class="sparkle sp-5">✨</div>
+
   <div class="container">
     
     <!-- Encabezado con Corona y Música -->
@@ -339,7 +351,7 @@
       <audio id="bgMusic" loop preload="auto" src="./musica.mp3"></audio>
     </div>
 
-    <!-- Dedicatoria en Recuadro con Imagen de la Rosa Encantada -->
+    <!-- Dedicatoria con Imagen de la Rosa -->
     <div class="message-card">
       <img src="./flor.jpeg" alt="Rosa Encantada" class="rose-image">
       <p>
@@ -377,7 +389,7 @@
     </div>
 
     <!-- Cuenta Regresiva -->
-    <div style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--dorado-brillo); margin-top: 25px; text-shadow: 0 0 10px rgba(219, 183, 130, 0.4);">
+    <div style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--dorado-brillo); margin-top: 25px; text-shadow: 0 0 12px rgba(248, 225, 166, 0.6);">
       Tan solo faltan...
     </div>
     <div class="timer-container">
@@ -402,11 +414,6 @@
       </p>
 
       <a href="https://maps.app.goo.gl/vy1NPnjoAZtWTRDR8" target="_blank" class="btn-gold">VER UBICACIÓN EN MAPS 📍</a>
-    </div>
-
-    <!-- Cúpula Destacada con la Rosa Real -->
-    <div>
-      <img src="./flor.jpeg" alt="Rosa Encantada Real" class="rose-image-large">
     </div>
 
     <!-- Código de Vestimenta -->
@@ -437,10 +444,10 @@
       </div>
     </div>
 
-    <!-- Cierre Te Esperamos -->
+    <!-- Cierre Te Esperamos CON LA FLOR FINAL -->
     <div style="margin-top: 35px;">
       <h2 class="main-title" style="font-size: 3rem;">Te esperamos...</h2>
-      <img src="./flor.jpeg" alt="Rosa Final" class="rose-image-divider" style="margin-top: 10px;">
+      <img src="./flor.jpeg" alt="Rosa Encantada Final" class="rose-image-large">
     </div>
 
   </div>
