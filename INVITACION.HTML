@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis XV Años - María Fernanda</title>
+  <!-- Fuentes de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Paleta de colores */
+      --rojo-tinto: #5b0609;        /* Centro: Rojo Borgoña Tinto */
+      --rojo-profundo: #280103;     /* Fondo base */
+      --dorado-calido: #dbb782;     /* Derecha: Dorado Cálido */
+      --crema-marfil: #efe5d5;      /* Izquierda: Crema Marfil */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--rojo-profundo);
+      background-image: radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 80%);
+      color: var(--dorado-calido);
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+
+    /* Corona / Tiara */
+    .crown {
+      font-size: 2.5rem;
+      color: var(--dorado-calido);
+      filter: drop-shadow(0 0 8px rgba(219, 183, 130, 0.6));
+      margin-top: 10px;
+    }
+
+    /* Títulos */
+    .main-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.8rem;
+      color: var(--dorado-calido);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0 0 10px rgba(219, 183, 130, 0.4);
+      margin: 5px 0;
+    }
+
+    .name-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: var(--dorado-calido);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0 0 12px rgba(219, 183, 130, 0.5);
+      margin: 10px 0;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 3px;
+      font-size: 1.1rem;
+      color: var(--crema-marfil);
+      text-transform: uppercase;
+    }
+
+    /* Tarjetas principales */
+    .card-frame {
+      background: linear-gradient(180deg, rgba(91, 6, 9, 0.95) 0%, rgba(40, 1, 3, 0.98) 100%);
+      border: 2px solid var(--dorado-calido);
+      border-radius: 20px;
+      padding: 25px 20px;
+      margin: 25px 0;
+      box-shadow: 0 0 25px rgba(219, 183, 130, 0.25), inset 0 0 15px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    /* RECUADRO DE CONTRASTE PARA EL MENSAJE (REEMPLAZA AL PERGAMINO) */
+    .message-card {
+      background-color: var(--crema-marfil);
+      border: 3px double var(--dorado-calido);
+      border-radius: 20px;
+      padding: 30px 22px;
+      margin: 25px 0;
+      box-shadow: 0 0 20px rgba(219, 183, 130, 0.4), inset 0 0 15px rgba(91, 6, 9, 0.1);
+      position: relative;
+    }
+
+    .message-card p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--rojo-tinto);
+      text-align: center;
+    }
+
+    .message-card .rose-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    /* Reproductor de Música */
+    .music-player {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--dorado-calido);
+      border-radius: 30px;
+      padding: 8px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 15px;
+      box-shadow: 0 0 10px rgba(219, 183, 130, 0.3);
+    }
+
+    .play-btn {
+      background: linear-gradient(135deg, var(--crema-marfil), var(--dorado-calido));
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rojo-tinto);
+      font-weight: bold;
+    }
+
+    /* Banners Rojos Elegantes */
+    .red-banner {
+      background: linear-gradient(135deg, var(--rojo-tinto) 0%, var(--rojo-profundo) 100%);
+      border: 2px solid var(--dorado-calido);
+      border-radius: 30px;
+      padding: 10px 20px;
+      margin: 25px auto 12px;
+      display: inline-block;
+      min-width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .red-banner span {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--dorado-calido);
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .names-list {
+      font-size: 1.05rem;
+      color: var(--crema-marfil);
+      line-height: 1.6;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .character-icon {
+      font-size: 2rem;
+      margin: 8px 0;
+      display: block;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8));
+    }
+
+    /* Marco Elegante del Nombre */
+    .name-badge {
+      background: linear-gradient(180deg, rgba(91,6,9,0.9) 0%, rgba(40,1,3,0.95) 100%);
+      border: 3px double var(--dorado-calido);
+      border-radius: 25px;
+      padding: 20px 15px;
+      margin: 25px 0;
+      box-shadow: 0 0 20px rgba(219, 183, 130, 0.3);
+    }
+
+    /* Reloj de Cuenta Regresiva */
+    .timer-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 18px 0 10px;
+    }
+
+    .time-box {
+      background: linear-gradient(180deg, var(--rojo-tinto) 0%, var(--rojo-profundo) 100%);
+      border: 1.5px solid var(--dorado-calido);
+      border-radius: 12px;
+      padding: 10px 6px;
+      min-width: 72px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    .time-box span {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--crema-marfil);
+    }
+
+    .time-box label {
+      font-size: 0.65rem;
+      color: var(--dorado-calido);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Botones Dorados */
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--crema-marfil) 0%, var(--dorado-calido) 100%);
+      color: #120003;
+      font-family: 'Cinzel', serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5), 0 0 10px rgba(219, 183, 130, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .btn-gold:active {
+      transform: scale(0.96);
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    /* Cúpula de la Rosa Encantada */
+    .enchanted-rose-dome {
+      width: 120px;
+      height: 140px;
+      margin: 15px auto 5px;
+      background: radial-gradient(circle, rgba(255,100,120,0.2) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 60px 60px 10px 10px;
+      border: 2px solid rgba(219, 183, 130, 0.5);
+      border-bottom: 6px solid var(--dorado-calido);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      box-shadow: 0 0 20px rgba(255, 50, 80, 0.4);
+    }
+
+    .rose-divider {
+      font-size: 2rem;
+      margin: 20px 0;
+      filter: drop-shadow(0 0 6px rgba(200,20,50,0.6));
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Encabezado con Corona y Música -->
+    <div class="card-frame">
+      <div class="crown">👑</div>
+      <h1 class="main-title">Mis XV Años</h1>
+      <div class="subtitle">Te invito a celebrar</div>
+      
+      <div class="music-player">
+        <button class="play-btn" id="musicBtn" onclick="toggleMusic()">▶</button>
+        <span style="font-size: 0.85rem; font-weight: 600; color: var(--crema-marfil);">Dale play para escuchar la canción</span>
+      </div>
+      <audio id="bgMusic" loop preload="auto" src="./musica.mp3"></audio>
+    </div>
+
+    <!-- RECUADRO CON DEDICATORIA EN ALTO CONTRASTE -->
+    <div class="message-card">
+      <span class="rose-icon">🌹</span>
+      <p>
+        "Hoy celebro el comienzo de una etapa maravillosa e inolvidable en mi vida. Al llegar a mis quince años, miro hacia atrás con profunda gratitud por cada recuerdo feliz y miro hacia el futuro con ilusión por todos los sueños que están por venir.<br><br>
+        Agradezco a Dios por guiar cada uno de mis pasos y colmar mi camino de bendiciones. A mis amados padres, por su amor incondicional, sus enseñanzas y por hacer posible este hermoso sueño. A mis queridos padrinos, por su cariño, apoyo y por acompañarme en este momento tan especial.<br><br>
+        Será un verdadero honor para mí compartir la magia de esta gran noche con las personas que más quiero."
+      </p>
+    </div>
+
+    <!-- Sección Mis Padres -->
+    <div class="red-banner"><span>Mis Padres</span></div>
+    <span class="character-icon" title="Sra. Potts y Chip">🫖☕</span>
+    <div class="names-list">
+      JUAN RAUL CACHO NAVARRETE<br>
+      RAQUEL VALVERDE FLORES
+    </div>
+
+    <!-- Sección Mis Padrinos -->
+    <div class="red-banner"><span>Mis Padrinos</span></div>
+    <span class="character-icon" title="Lumiere y Din Don">🕯️🕰️</span>
+    <div class="names-list">
+      Nombre del Padrino<br>
+      Nombre de la Padrina
+    </div>
+
+    <!-- Nombre de la Quinceañera -->
+    <div class="name-badge">
+      <p style="font-family: 'Cinzel'; font-size: 0.9rem; letter-spacing: 2px; color: var(--crema-marfil);">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
+      <h2 class="name-title">María Fernanda Guadalupe<br>Cacho Valverde</h2>
+      <div style="font-size: 1.5rem; color: var(--dorado-calido);">🦋 🌹 🦋</div>
+    </div>
+
+    <!-- Cuenta Regresiva -->
+    <div style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--dorado-calido); margin-top: 25px;">
+      Tan solo faltan...
+    </div>
+    <div class="timer-container">
+      <div class="time-box"><span id="days">--</span><label>Días</label></div>
+      <div class="time-box"><span id="hours">--</span><label>Horas</label></div>
+      <div class="time-box"><span id="minutes">--</span><label>Minutos</label></div>
+      <div class="time-box"><span id="seconds">--</span><label>Segundos</label></div>
+    </div>
+
+    <!-- Fecha y Recepción -->
+    <div class="card-frame">
+      <h3 style="font-family: 'Cinzel'; font-size: 1.4rem; color: var(--dorado-calido);">Sábado, 7 de Noviembre de 2026</h3>
+      
+      <div style="margin-top: 15px;">
+        <span style="font-size: 2rem;">🏰</span>
+        <p style="font-size: 1.1rem; font-weight: 600; color: var(--crema-marfil);">Recepción:</p>
+        <p style="font-size: 1.2rem; color: var(--dorado-calido); font-family: 'Cinzel'; margin-top: 3px;"><b>Eventos JV</b></p>
+      </div>
+
+      <!-- Dirección Completa -->
+      <p style="margin-top: 12px; font-size: 0.92rem; color: var(--crema-marfil); line-height: 1.5;">
+        📍 <b>Dirección:</b><br>Torres del Pacífico 294, Carabayllo 15319
+      </p>
+
+      <a href="https://maps.app.goo.gl/vy1NPnjoAZtWTRDR8" target="_blank" class="btn-gold">VER UBICACIÓN EN MAPS 📍</a>
+    </div>
+
+    <!-- Cúpula de la Rosa Encantada -->
+    <div class="enchanted-rose-dome">🌹</div>
+
+    <!-- Código de Vestimenta -->
+    <div class="card-frame">
+      <div class="red-banner" style="margin-top: 0;"><span>Código de Vestimenta</span></div>
+      <p style="font-size: 1.15rem; margin-top: 10px; color: var(--crema-marfil);"><b>Sport Elegante 👔👗</b></p>
+      <p style="font-size: 0.9rem; margin-top: 10px; color: var(--crema-marfil); line-height: 1.4;">
+        🚫 <i>Prohibido vestir en color <b>champagne</b> y <b>vino</b>.</i>
+      </p>
+    </div>
+
+    <!-- Regalos / Lluvia de Sobres -->
+    <div class="card-frame">
+      <div class="red-banner" style="margin-top: 0;"><span>Regalo</span></div>
+      <div style="font-size: 2rem; margin: 10px 0;">🎁 ✉️</div>
+      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil);">
+        El mejor regalo será compartir este día contigo. Si deseas obsequiarme algo, serán bienvenidos tanto los regalos como la <b>lluvia de sobres</b>.
+      </p>
+    </div>
+
+    <!-- Confirmación de Asistencia -->
+    <div class="card-frame">
+      <div class="subtitle">Confirma tu asistencia</div>
+      <p style="font-size: 0.88rem; margin: 10px 0 15px; color: var(--crema-marfil);">Será un honor contar con tu presencia.</p>
+      
+      <div class="btn-group">
+        <a href="https://wa.me/51922957575?text=Hola%20Maria%20Fernanda,%20confirmo%20mi%20asistencia%20a%20tus%20XV%20Años" target="_blank" class="btn-gold">María Fernanda 💬</a>
+        <a href="https://wa.me/51922957575?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20Años%20de%20Maria%20Fernanda" target="_blank" class="btn-gold">Mamá 💬</a>
+      </div>
+    </div>
+
+    <!-- Cierre Te Esperamos -->
+    <div style="margin-top: 35px;">
+      <h2 class="main-title" style="font-size: 3rem;">Te esperamos...</h2>
+      <div class="rose-divider">🥀</div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript para Música y Reloj -->
+  <script>
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      const musicBtn = document.getElementById('musicBtn');
+
+      if (music.paused) {
+        const playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            musicBtn.textContent = '❚❚';
+          }).catch(error => {
+            console.error("Error al reproducir audio:", error);
+            alert("Recuerda verificar que el archivo en GitHub se llame 'musica.mp3'.");
+          });
+        }
+      } else {
+        music.pause();
+        musicBtn.textContent = '▶';
+      }
+    }
+
+    const eventDate = new Date("2026-11-07T19:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+      document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
