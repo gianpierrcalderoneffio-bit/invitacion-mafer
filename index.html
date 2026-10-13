@@ -34,7 +34,7 @@
       position: relative;
     }
 
-    /* EFECTO DE DESTELLOS Y DESTELLOS FLOTANTES EN EL FONDO */
+    /* EFECTO DE DESTELLOS FLOTANTES EN EL FONDO */
     .sparkle {
       position: fixed;
       color: var(--dorado-brillo);
@@ -107,7 +107,7 @@
       font-weight: 700;
     }
 
-    /* Tarjetas principales con bordes dobles y resplandor */
+    /* Tarjetas principales con bordes dobles */
     .card-frame {
       background: linear-gradient(180deg, rgba(91, 6, 9, 0.92) 0%, rgba(40, 1, 3, 0.96) 100%);
       border: 2px solid var(--dorado-calido);
@@ -143,7 +143,7 @@
       text-align: center;
     }
 
-    /* IMAGEN DE LA ROSA (flor.jpeg) */
+    /* IMÁGENES DE LA ROSA */
     .rose-image {
       width: 75px;
       height: 75px;
@@ -166,15 +166,21 @@
       display: block;
     }
 
+    /* IMAGEN FINAL GRANDE DE LA ROSA ENCANTADA */
     .rose-image-large {
-      width: 130px;
-      height: 130px;
+      width: 250px;
+      height: 250px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid var(--dorado-calido);
-      box-shadow: 0 0 25px rgba(248, 225, 166, 0.85);
-      margin: 20px auto;
+      border: 4px solid var(--dorado-calido);
+      box-shadow: 0 0 35px rgba(248, 225, 166, 0.9), inset 0 0 15px rgba(0,0,0,0.5);
+      margin: 25px auto 10px;
       display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .rose-image-large:hover {
+      transform: scale(1.03);
     }
 
     /* Reproductor de Música */
@@ -444,9 +450,9 @@
       </div>
     </div>
 
-    <!-- Cierre Te Esperamos CON LA FLOR FINAL -->
+    <!-- Cierre Te Esperamos CON LA FLOR FINAL EN TAMAÑO GRANDE -->
     <div style="margin-top: 35px;">
-      <h2 class="main-title" style="font-size: 3rem;">Te esperamos...</h2>
+      <h2 class="main-title" style="font-size: 3.2rem;">Te esperamos...</h2>
       <img src="./flor.jpeg" alt="Rosa Encantada Final" class="rose-image-large">
     </div>
 
