@@ -48,7 +48,6 @@
       animation: sparkleGlow 3s infinite alternate;
     }
 
-    /* Animación de destello suave */
     @keyframes sparkleGlow {
       0% { filter: drop-shadow(0 0 4px rgba(219, 183, 130, 0.4)); transform: scale(1); }
       100% { filter: drop-shadow(0 0 14px rgba(245, 215, 158, 0.9)); transform: scale(1.05); }
@@ -90,13 +89,13 @@
       outline: 1px solid rgba(219, 183, 130, 0.3);
       outline-offset: -6px;
       border-radius: 20px;
-      padding: 28px 22px;
-      margin: 25px 0;
+      padding: 24px 20px;
+      margin: 22px 0;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(219, 183, 130, 0.2);
       position: relative;
     }
 
-    /* Recuadro de Dedicatoria en crema con alto contraste */
+    /* Recuadro de Dedicatoria en crema */
     .message-card {
       background: linear-gradient(180deg, #f5ecd8 0%, var(--crema-marfil) 100%);
       border: 2px solid var(--dorado-calido);
@@ -104,7 +103,7 @@
       outline-offset: -6px;
       border-radius: 20px;
       padding: 30px 22px;
-      margin: 25px 0;
+      margin: 22px 0;
       box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 15px rgba(219, 183, 130, 0.3);
       position: relative;
     }
@@ -155,13 +154,13 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
-    /* Banners de sección uniformes */
+    /* Banners de sección */
     .red-banner {
       background: linear-gradient(135deg, var(--rojo-tinto) 0%, #3e0306 100%);
       border: 1.5px solid var(--dorado-calido);
       border-radius: 25px;
       padding: 8px 24px;
-      margin: 25px auto 10px;
+      margin: 0 auto 12px;
       display: inline-block;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 8px rgba(219, 183, 130, 0.2);
     }
@@ -182,17 +181,16 @@
       line-height: 1.7;
       font-weight: 600;
       letter-spacing: 1px;
-      margin-bottom: 10px;
     }
 
     .character-icon {
       font-size: 1.8rem;
-      margin: 6px 0;
+      margin: 8px 0;
       display: block;
       filter: drop-shadow(0 2px 6px rgba(0,0,0,0.7));
     }
 
-    /* Marco Elegante del Nombre */
+    /* Marco del Nombre de la Quinceañera */
     .name-badge {
       background: linear-gradient(180deg, rgba(91,6,9,0.95) 0%, rgba(40,1,3,0.98) 100%);
       border: 2px solid var(--dorado-calido);
@@ -200,7 +198,7 @@
       outline-offset: -6px;
       border-radius: 22px;
       padding: 24px 16px;
-      margin: 25px 0;
+      margin: 22px 0;
       box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 20px rgba(219, 183, 130, 0.25);
     }
 
@@ -237,7 +235,7 @@
       font-weight: 600;
     }
 
-    /* Botones Dorados con efecto Brillo */
+    /* Botones Dorados */
     .btn-gold {
       display: inline-block;
       background: linear-gradient(135deg, var(--crema-marfil) 0%, var(--dorado-calido) 50%, #c49c63 100%);
@@ -307,7 +305,7 @@
       <audio id="bgMusic" loop preload="auto" src="./musica.mp3"></audio>
     </div>
 
-    <!-- RECUADRO CON DEDICATORIA EN ALTO CONTRASTE -->
+    <!-- Dedicatoria en Recuadro Crema de Alto Contraste -->
     <div class="message-card">
       <span class="rose-icon">🌹</span>
       <p>
@@ -317,20 +315,24 @@
       </p>
     </div>
 
-    <!-- Sección Mis Padres -->
-    <div class="red-banner"><span>Mis Padres</span></div>
-    <span class="character-icon" title="Sra. Potts y Chip">🫖☕</span>
-    <div class="names-list">
-      JUAN RAUL CACHO NAVARRETE<br>
-      RAQUEL VALVERDE FLORES
+    <!-- Sección Mis Padres en Recuadro Elegante -->
+    <div class="card-frame">
+      <div class="red-banner"><span>Mis Padres</span></div>
+      <span class="character-icon" title="Sra. Potts y Chip">🫖☕</span>
+      <div class="names-list">
+        JUAN RAUL CACHO NAVARRETE<br>
+        RAQUEL VALVERDE FLORES
+      </div>
     </div>
 
-    <!-- Sección Mis Padrinos -->
-    <div class="red-banner"><span>Mis Padrinos</span></div>
-    <span class="character-icon" title="Lumiere y Din Don">🕯️🕰️</span>
-    <div class="names-list">
-      Nombre del Padrino<br>
-      Nombre de la Padrina
+    <!-- Sección Mis Padrinos en Recuadro Elegante -->
+    <div class="card-frame">
+      <div class="red-banner"><span>Mis Padrinos</span></div>
+      <span class="character-icon" title="Lumiere y Din Don">🕯️🕰️</span>
+      <div class="names-list">
+        Nombre del Padrino<br>
+        Nombre de la Padrina
+      </div>
     </div>
 
     <!-- Nombre de la Quinceañera -->
@@ -374,8 +376,8 @@
 
     <!-- Código de Vestimenta -->
     <div class="card-frame">
-      <div class="red-banner" style="margin-top: 0;"><span>Código de Vestimenta</span></div>
-      <p style="font-size: 1.1rem; margin-top: 10px; color: var(--crema-marfil); font-family: 'Cinzel'; font-weight: 600;">Sport Elegante 👔👗</p>
+      <div class="red-banner"><span>Código de Vestimenta</span></div>
+      <p style="font-size: 1.1rem; margin-top: 5px; color: var(--crema-marfil); font-family: 'Cinzel'; font-weight: 600;">Sport Elegante 👔👗</p>
       <p style="font-size: 0.88rem; margin-top: 10px; color: var(--crema-marfil); line-height: 1.4; font-weight: 500;">
         🚫 <i>Prohibido vestir en color <b>champagne</b> y <b>vino</b>.</i>
       </p>
@@ -383,8 +385,8 @@
 
     <!-- Regalos / Lluvia de Sobres -->
     <div class="card-frame">
-      <div class="red-banner" style="margin-top: 0;"><span>Regalo</span></div>
-      <div style="font-size: 1.8rem; margin: 10px 0;">🎁 ✉️</div>
+      <div class="red-banner"><span>Regalo</span></div>
+      <div style="font-size: 1.8rem; margin: 8px 0;">🎁 ✉️</div>
       <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil); font-weight: 400;">
         El mejor regalo será compartir este día contigo. Si deseas obsequiarme algo, serán bienvenidos tanto los regalos como la <b>lluvia de sobres</b>.
       </p>
