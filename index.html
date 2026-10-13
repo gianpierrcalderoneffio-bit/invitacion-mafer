@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis XV Años - María Fernanda</title>
-  <!-- Fuentes de Google Fonts (Cinzel, Cinzel Decorative, Great Vibes y Montserrat) -->
+  <!-- Fuentes de Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700;800;900&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
   <style>
@@ -25,18 +25,33 @@
 
     body {
       background-color: var(--rojo-profundo);
-      background-image: radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 85%);
+      background-image: 
+        radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 85%),
+        radial-gradient(2px 2px at 20px 30px, var(--dorado-brillo), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 150px 180px, var(--dorado-brillo), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 280px 80px, var(--dorado-brillo), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 320px 300px, var(--dorado-brillo), rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 100% 100%, 350px 350px, 300px 300px, 250px 250px, 400px 400px;
+      animation: floatSparkles 8s ease-in-out infinite alternate;
       color: var(--dorado-calido);
-      font-family: 'Cinzel', serif; /* Tipografía clásica predeterminada */
+      font-family: 'Cinzel', serif;
       text-align: center;
       padding-bottom: 60px;
       overflow-x: hidden;
+    }
+
+    /* Animación de Destellos Mágicos en Fondo */
+    @keyframes floatSparkles {
+      0% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+      100% { background-position: 0 0, -20px -30px, 15px -25px, -10px 20px, 25px -15px; }
     }
 
     .container {
       max-width: 480px;
       margin: 0 auto;
       padding: 15px;
+      position: relative;
     }
 
     /* Corona Real con destello */
@@ -50,7 +65,7 @@
 
     @keyframes sparkleGlow {
       0% { filter: drop-shadow(0 0 4px rgba(219, 183, 130, 0.4)); transform: scale(1); }
-      100% { filter: drop-shadow(0 0 14px rgba(245, 215, 158, 0.9)); transform: scale(1.05); }
+      100% { filter: drop-shadow(0 0 16px rgba(245, 215, 158, 0.95)); transform: scale(1.05); }
     }
 
     /* Títulos Principales */
@@ -58,7 +73,7 @@
       font-family: 'Great Vibes', cursive;
       font-size: 3.8rem;
       color: var(--dorado-brillo);
-      text-shadow: 0 0 12px rgba(219, 183, 130, 0.5), 2px 2px 4px rgba(0,0,0,0.8);
+      text-shadow: 0 0 12px rgba(219, 183, 130, 0.6), 2px 2px 4px rgba(0,0,0,0.8);
       margin: 5px 0;
       font-weight: normal;
     }
@@ -67,7 +82,7 @@
       font-family: 'Great Vibes', cursive;
       font-size: 3.2rem;
       color: var(--dorado-brillo);
-      text-shadow: 0 0 15px rgba(245, 215, 158, 0.6), 2px 2px 4px rgba(0,0,0,0.9);
+      text-shadow: 0 0 15px rgba(245, 215, 158, 0.7), 2px 2px 4px rgba(0,0,0,0.9);
       margin: 12px 0;
       line-height: 1.25;
       font-weight: normal;
@@ -91,11 +106,11 @@
       border-radius: 20px;
       padding: 24px 20px;
       margin: 22px 0;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(219, 183, 130, 0.2);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(219, 183, 130, 0.25);
       position: relative;
     }
 
-    /* Recuadro de Dedicatoria en crema */
+    /* Recuadro de Dedicatoria */
     .message-card {
       background: linear-gradient(180deg, #f5ecd8 0%, var(--crema-marfil) 100%);
       border: 2px solid var(--dorado-calido);
@@ -104,7 +119,7 @@
       border-radius: 20px;
       padding: 30px 22px;
       margin: 22px 0;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 15px rgba(219, 183, 130, 0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 18px rgba(219, 183, 130, 0.35);
       position: relative;
     }
 
@@ -118,11 +133,43 @@
       text-align: center;
     }
 
-    .message-card .rose-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
+    /* IMAGEN DE LA ROSA (Sustituto de emoticones) */
+    .rose-image {
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--dorado-calido);
+      box-shadow: 0 0 14px rgba(245, 215, 158, 0.6);
+      margin: 8px auto 14px;
       display: block;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      transition: transform 0.3s ease;
+    }
+
+    .rose-image:hover {
+      transform: scale(1.08);
+    }
+
+    .rose-image-large {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--dorado-calido);
+      box-shadow: 0 0 25px rgba(245, 215, 158, 0.8), inset 0 0 10px rgba(0,0,0,0.5);
+      margin: 15px auto;
+      display: block;
+    }
+
+    .rose-image-divider {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1.5px solid var(--dorado-calido);
+      box-shadow: 0 0 12px rgba(219, 183, 130, 0.5);
+      margin: 15px auto;
+      display: block;
     }
 
     /* Reproductor de Música */
@@ -174,7 +221,7 @@
       text-transform: uppercase;
     }
 
-    /* LISTA DE NOMBRES CON TIPOGRAFÍA ESTILO "EVENTOS JV" */
+    /* Nombres en Tipografía Clásica */
     .names-list {
       font-family: 'Cinzel', serif;
       font-size: 1.05rem;
@@ -184,13 +231,6 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    }
-
-    .character-icon {
-      font-size: 1.8rem;
-      margin: 8px 0;
-      display: block;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.7));
     }
 
     /* Marco del Nombre de la Quinceañera */
@@ -250,7 +290,7 @@
       text-transform: uppercase;
     }
 
-    /* Botones Dorados */
+    /* Botones Dorados con destello al presionar */
     .btn-gold {
       display: inline-block;
       background: linear-gradient(135deg, var(--crema-marfil) 0%, var(--dorado-calido) 50%, #c49c63 100%);
@@ -280,28 +320,6 @@
       flex-wrap: wrap;
       margin-top: 15px;
     }
-
-    /* Cúpula de la Rosa Encantada */
-    .enchanted-rose-dome {
-      width: 110px;
-      height: 130px;
-      margin: 15px auto 5px;
-      background: radial-gradient(circle, rgba(219, 183, 130, 0.15) 0%, rgba(0,0,0,0) 70%);
-      border-radius: 55px 55px 10px 10px;
-      border: 1.5px solid rgba(219, 183, 130, 0.5);
-      border-bottom: 5px solid var(--dorado-calido);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.2rem;
-      box-shadow: 0 0 18px rgba(219, 183, 130, 0.3);
-    }
-
-    .rose-divider {
-      font-size: 1.8rem;
-      margin: 20px 0;
-      filter: drop-shadow(0 0 6px rgba(219, 183, 130, 0.4));
-    }
   </style>
 </head>
 <body>
@@ -321,9 +339,9 @@
       <audio id="bgMusic" loop preload="auto" src="./musica.mp3"></audio>
     </div>
 
-    <!-- Dedicatoria en Recuadro Crema de Alto Contraste -->
+    <!-- Dedicatoria en Recuadro con Imagen de la Rosa Encantada -->
     <div class="message-card">
-      <span class="rose-icon">🌹</span>
+      <img src="./flor.jpeg" alt="Rosa Encantada" class="rose-image">
       <p>
         "Hoy celebro el comienzo de una etapa maravillosa e inolvidable en mi vida. Al llegar a mis quince años, miro hacia atrás con profunda gratitud por cada recuerdo feliz y miro hacia el futuro con ilusión por todos los sueños que están por venir.<br><br>
         Agradezco a Dios por guiar cada uno de mis pasos y colmar mi camino de bendiciones. A mis amados padres, por su amor incondicional, sus enseñanzas y por hacer posible este hermoso sueño. A mis queridos padrinos, por su cariño, apoyo y por acompañarme en este momento tan especial.<br><br>
@@ -334,7 +352,7 @@
     <!-- Sección Mis Padres -->
     <div class="card-frame">
       <div class="red-banner"><span>Mis Padres</span></div>
-      <span class="character-icon" title="Sra. Potts y Chip">🫖☕</span>
+      <img src="./flor.jpeg" alt="Rosa Encantada" class="rose-image-divider">
       <div class="names-list">
         JUAN RAUL CACHO NAVARRETE<br>
         RAQUEL VALVERDE FLORES
@@ -344,7 +362,7 @@
     <!-- Sección Mis Padrinos -->
     <div class="card-frame">
       <div class="red-banner"><span>Mis Padrinos</span></div>
-      <span class="character-icon" title="Lumiere y Din Don">🕯️🕰️</span>
+      <img src="./flor.jpeg" alt="Rosa Encantada" class="rose-image-divider">
       <div class="names-list">
         NOMBRE DEL PADRINO<br>
         NOMBRE DE LA PADRINA
@@ -355,7 +373,7 @@
     <div class="name-badge">
       <p style="font-family: 'Cinzel'; font-size: 0.85rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 700;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
       <h2 class="name-title">María Fernanda Guadalupe<br>Cacho Valverde</h2>
-      <div style="font-size: 1.4rem; color: var(--dorado-calido);">✨ 🌹 ✨</div>
+      <img src="./flor.jpeg" alt="Rosa Encantada" class="rose-image-divider">
     </div>
 
     <!-- Cuenta Regresiva -->
@@ -374,7 +392,6 @@
       <h3 style="font-family: 'Cinzel'; font-size: 1.35rem; color: var(--dorado-brillo); letter-spacing: 1.5px; font-weight: 700;">Sábado, 7 de Noviembre de 2026</h3>
       
       <div style="margin-top: 18px;">
-        <span style="font-size: 2rem;">🏰</span>
         <p style="font-size: 0.95rem; font-weight: 700; color: var(--crema-marfil); font-family: 'Cinzel', serif; margin-top: 5px; letter-spacing: 1.5px; text-transform: uppercase;">Recepción:</p>
         <p class="venue-title">EVENTOS JV</p>
       </div>
@@ -387,8 +404,10 @@
       <a href="https://maps.app.goo.gl/vy1NPnjoAZtWTRDR8" target="_blank" class="btn-gold">VER UBICACIÓN EN MAPS 📍</a>
     </div>
 
-    <!-- Cúpula de la Rosa Encantada -->
-    <div class="enchanted-rose-dome">🌹</div>
+    <!-- Cúpula Destacada con la Rosa Real -->
+    <div>
+      <img src="./flor.jpeg" alt="Rosa Encantada Real" class="rose-image-large">
+    </div>
 
     <!-- Código de Vestimenta -->
     <div class="card-frame">
@@ -402,8 +421,7 @@
     <!-- Regalos / Lluvia de Sobres -->
     <div class="card-frame">
       <div class="red-banner"><span>Regalo</span></div>
-      <div style="font-size: 1.8rem; margin: 8px 0;">🎁 ✉️</div>
-      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif;">
+      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif; margin-top: 10px;">
         El mejor regalo será compartir este día contigo. Si deseas obsequiarme algo, serán bienvenidos tanto los regalos como la <b>lluvia de sobres</b>.
       </p>
     </div>
@@ -422,7 +440,7 @@
     <!-- Cierre Te Esperamos -->
     <div style="margin-top: 35px;">
       <h2 class="main-title" style="font-size: 3rem;">Te esperamos...</h2>
-      <div class="rose-divider">🥀</div>
+      <img src="./flor.jpeg" alt="Rosa Final" class="rose-image-divider" style="margin-top: 10px;">
     </div>
 
   </div>
