@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis XV Años - María Fernanda</title>
-  <!-- Fuentes de Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- Fuentes de Google Fonts (Cinzel, Cinzel Decorative, Great Vibes y Montserrat) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700;800;900&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -27,7 +27,7 @@
       background-color: var(--rojo-profundo);
       background-image: radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 85%);
       color: var(--dorado-calido);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Cinzel', serif; /* Tipografía clásica predeterminada */
       text-align: center;
       padding-bottom: 60px;
       overflow-x: hidden;
@@ -79,7 +79,7 @@
       font-size: 1rem;
       color: var(--crema-marfil);
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* Tarjetas principales con bordes dobles y resplandor */
@@ -160,7 +160,7 @@
       border: 1.5px solid var(--dorado-calido);
       border-radius: 25px;
       padding: 8px 24px;
-      margin: 0 auto 12px;
+      margin: 0 auto 14px;
       display: inline-block;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 8px rgba(219, 183, 130, 0.2);
     }
@@ -174,13 +174,16 @@
       text-transform: uppercase;
     }
 
+    /* LISTA DE NOMBRES CON TIPOGRAFÍA ESTILO "EVENTOS JV" */
     .names-list {
       font-family: 'Cinzel', serif;
-      font-size: 0.98rem;
+      font-size: 1.05rem;
       color: var(--crema-marfil);
-      line-height: 1.7;
-      font-weight: 600;
-      letter-spacing: 1px;
+      line-height: 1.8;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     }
 
     .character-icon {
@@ -232,7 +235,19 @@
       color: var(--dorado-calido);
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    /* Nombre del Local estilo EVENTOS JV */
+    .venue-title {
+      font-family: 'Cinzel Decorative', 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: var(--dorado-brillo);
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(245, 215, 158, 0.5);
+      margin-top: 4px;
+      text-transform: uppercase;
     }
 
     /* Botones Dorados */
@@ -251,6 +266,7 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 12px rgba(219, 183, 130, 0.3);
       transition: all 0.2s ease-in-out;
       border: 1px solid var(--dorado-brillo);
+      text-transform: uppercase;
     }
 
     .btn-gold:active {
@@ -300,7 +316,7 @@
       
       <div class="music-player">
         <button class="play-btn" id="musicBtn" onclick="toggleMusic()">▶</button>
-        <span style="font-size: 0.85rem; font-weight: 600; color: var(--crema-marfil);">Dale play para escuchar la canción</span>
+        <span style="font-size: 0.85rem; font-weight: 600; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif;">Dale play para escuchar la canción</span>
       </div>
       <audio id="bgMusic" loop preload="auto" src="./musica.mp3"></audio>
     </div>
@@ -315,7 +331,7 @@
       </p>
     </div>
 
-    <!-- Sección Mis Padres en Recuadro Elegante -->
+    <!-- Sección Mis Padres -->
     <div class="card-frame">
       <div class="red-banner"><span>Mis Padres</span></div>
       <span class="character-icon" title="Sra. Potts y Chip">🫖☕</span>
@@ -325,19 +341,19 @@
       </div>
     </div>
 
-    <!-- Sección Mis Padrinos en Recuadro Elegante -->
+    <!-- Sección Mis Padrinos -->
     <div class="card-frame">
       <div class="red-banner"><span>Mis Padrinos</span></div>
       <span class="character-icon" title="Lumiere y Din Don">🕯️🕰️</span>
       <div class="names-list">
-        Nombre del Padrino<br>
-        Nombre de la Padrina
+        NOMBRE DEL PADRINO<br>
+        NOMBRE DE LA PADRINA
       </div>
     </div>
 
     <!-- Nombre de la Quinceañera -->
     <div class="name-badge">
-      <p style="font-family: 'Cinzel'; font-size: 0.85rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 600;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
+      <p style="font-family: 'Cinzel'; font-size: 0.85rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 700;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
       <h2 class="name-title">María Fernanda Guadalupe<br>Cacho Valverde</h2>
       <div style="font-size: 1.4rem; color: var(--dorado-calido);">✨ 🌹 ✨</div>
     </div>
@@ -355,16 +371,16 @@
 
     <!-- Fecha y Recepción -->
     <div class="card-frame">
-      <h3 style="font-family: 'Cinzel'; font-size: 1.35rem; color: var(--dorado-brillo); letter-spacing: 1px;">Sábado, 7 de Noviembre de 2026</h3>
+      <h3 style="font-family: 'Cinzel'; font-size: 1.35rem; color: var(--dorado-brillo); letter-spacing: 1.5px; font-weight: 700;">Sábado, 7 de Noviembre de 2026</h3>
       
-      <div style="margin-top: 15px;">
+      <div style="margin-top: 18px;">
         <span style="font-size: 2rem;">🏰</span>
-        <p style="font-size: 1rem; font-weight: 600; color: var(--crema-marfil); font-family: 'Cinzel'; margin-top: 5px;">Recepción:</p>
-        <p style="font-size: 1.25rem; color: var(--dorado-brillante); font-family: 'Cinzel'; margin-top: 3px; font-weight: 700;">Eventos JV</p>
+        <p style="font-size: 0.95rem; font-weight: 700; color: var(--crema-marfil); font-family: 'Cinzel', serif; margin-top: 5px; letter-spacing: 1.5px; text-transform: uppercase;">Recepción:</p>
+        <p class="venue-title">EVENTOS JV</p>
       </div>
 
       <!-- Dirección Completa -->
-      <p style="margin-top: 12px; font-size: 0.92rem; color: var(--crema-marfil); line-height: 1.5;">
+      <p style="margin-top: 14px; font-size: 0.92rem; color: var(--crema-marfil); line-height: 1.6; font-family: 'Montserrat', sans-serif;">
         📍 <b>Dirección:</b><br>Torres del Pacífico 294, Carabayllo 15319
       </p>
 
@@ -377,8 +393,8 @@
     <!-- Código de Vestimenta -->
     <div class="card-frame">
       <div class="red-banner"><span>Código de Vestimenta</span></div>
-      <p style="font-size: 1.1rem; margin-top: 5px; color: var(--crema-marfil); font-family: 'Cinzel'; font-weight: 600;">Sport Elegante 👔👗</p>
-      <p style="font-size: 0.88rem; margin-top: 10px; color: var(--crema-marfil); line-height: 1.4; font-weight: 500;">
+      <p style="font-size: 1.1rem; margin-top: 5px; color: var(--crema-marfil); font-family: 'Cinzel'; font-weight: 700; letter-spacing: 1px;">Sport Elegante 👔👗</p>
+      <p style="font-size: 0.88rem; margin-top: 10px; color: var(--crema-marfil); line-height: 1.4; font-family: 'Montserrat', sans-serif;">
         🚫 <i>Prohibido vestir en color <b>champagne</b> y <b>vino</b>.</i>
       </p>
     </div>
@@ -387,7 +403,7 @@
     <div class="card-frame">
       <div class="red-banner"><span>Regalo</span></div>
       <div style="font-size: 1.8rem; margin: 8px 0;">🎁 ✉️</div>
-      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil); font-weight: 400;">
+      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif;">
         El mejor regalo será compartir este día contigo. Si deseas obsequiarme algo, serán bienvenidos tanto los regalos como la <b>lluvia de sobres</b>.
       </p>
     </div>
@@ -395,7 +411,7 @@
     <!-- Confirmación de Asistencia -->
     <div class="card-frame">
       <div class="subtitle">Confirma tu asistencia</div>
-      <p style="font-size: 0.88rem; margin: 10px 0 15px; color: var(--crema-marfil); font-weight: 400;">Será un honor contar con tu presencia.</p>
+      <p style="font-size: 0.88rem; margin: 10px 0 15px; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif;">Será un honor contar con tu presencia.</p>
       
       <div class="btn-group">
         <a href="https://wa.me/51922957575?text=Hola%20Maria%20Fernanda,%20confirmo%20mi%20asistencia%20a%20tus%20XV%20Años" target="_blank" class="btn-gold">María Fernanda 💬</a>
