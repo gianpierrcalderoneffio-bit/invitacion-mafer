@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis XV Años - María Fernanda</title>
   <!-- Fuentes de Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Paleta de colores */
-      --rojo-tinto: #5b0609;        /* Centro: Rojo Borgoña Tinto */
-      --rojo-profundo: #280103;     /* Fondo base */
-      --dorado-calido: #dbb782;     /* Derecha: Dorado Cálido */
-      --crema-marfil: #efe5d5;      /* Izquierda: Crema Marfil */
+      /* Paleta de colores oficial */
+      --rojo-tinto: #5b0609;        /* Centro / Tarjetas */
+      --rojo-profundo: #280103;     /* Fondo principal */
+      --dorado-calido: #dbb782;     /* Bordes y Acentos */
+      --dorado-brillo: #f5d79e;     /* Destellos */
+      --crema-marfil: #efe5d5;      /* Textos claros y tarjeta mensaje */
     }
 
     * {
@@ -24,11 +25,12 @@
 
     body {
       background-color: var(--rojo-profundo);
-      background-image: radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 80%);
+      background-image: radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 85%);
       color: var(--dorado-calido);
       font-family: 'Montserrat', sans-serif;
       text-align: center;
       padding-bottom: 60px;
+      overflow-x: hidden;
     }
 
     .container {
@@ -37,67 +39,81 @@
       padding: 15px;
     }
 
-    /* Corona / Tiara */
+    /* Corona Real con destello */
     .crown {
-      font-size: 2.5rem;
-      color: var(--dorado-calido);
-      filter: drop-shadow(0 0 8px rgba(219, 183, 130, 0.6));
+      font-size: 2.2rem;
+      color: var(--dorado-brillo);
+      filter: drop-shadow(0 0 10px rgba(245, 215, 158, 0.7));
       margin-top: 10px;
+      animation: sparkleGlow 3s infinite alternate;
     }
 
-    /* Títulos */
+    /* Animación de destello suave */
+    @keyframes sparkleGlow {
+      0% { filter: drop-shadow(0 0 4px rgba(219, 183, 130, 0.4)); transform: scale(1); }
+      100% { filter: drop-shadow(0 0 14px rgba(245, 215, 158, 0.9)); transform: scale(1.05); }
+    }
+
+    /* Títulos Principales */
     .main-title {
       font-family: 'Great Vibes', cursive;
       font-size: 3.8rem;
-      color: var(--dorado-calido);
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0 0 10px rgba(219, 183, 130, 0.4);
+      color: var(--dorado-brillo);
+      text-shadow: 0 0 12px rgba(219, 183, 130, 0.5), 2px 2px 4px rgba(0,0,0,0.8);
       margin: 5px 0;
+      font-weight: normal;
     }
 
     .name-title {
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      color: var(--dorado-calido);
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.9), 0 0 12px rgba(219, 183, 130, 0.5);
-      margin: 10px 0;
-      line-height: 1.2;
+      font-size: 3.2rem;
+      color: var(--dorado-brillo);
+      text-shadow: 0 0 15px rgba(245, 215, 158, 0.6), 2px 2px 4px rgba(0,0,0,0.9);
+      margin: 12px 0;
+      line-height: 1.25;
+      font-weight: normal;
     }
 
     .subtitle {
       font-family: 'Cinzel', serif;
       letter-spacing: 3px;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--crema-marfil);
       text-transform: uppercase;
+      font-weight: 600;
     }
 
-    /* Tarjetas principales */
+    /* Tarjetas principales con bordes dobles y resplandor */
     .card-frame {
-      background: linear-gradient(180deg, rgba(91, 6, 9, 0.95) 0%, rgba(40, 1, 3, 0.98) 100%);
+      background: linear-gradient(180deg, rgba(91, 6, 9, 0.92) 0%, rgba(40, 1, 3, 0.96) 100%);
       border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(219, 183, 130, 0.3);
+      outline-offset: -6px;
       border-radius: 20px;
-      padding: 25px 20px;
+      padding: 28px 22px;
       margin: 25px 0;
-      box-shadow: 0 0 25px rgba(219, 183, 130, 0.25), inset 0 0 15px rgba(0,0,0,0.8);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(219, 183, 130, 0.2);
       position: relative;
     }
 
-    /* RECUADRO DE CONTRASTE PARA EL MENSAJE (REEMPLAZA AL PERGAMINO) */
+    /* Recuadro de Dedicatoria en crema con alto contraste */
     .message-card {
-      background-color: var(--crema-marfil);
-      border: 3px double var(--dorado-calido);
+      background: linear-gradient(180deg, #f5ecd8 0%, var(--crema-marfil) 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(91, 6, 9, 0.2);
+      outline-offset: -6px;
       border-radius: 20px;
       padding: 30px 22px;
       margin: 25px 0;
-      box-shadow: 0 0 20px rgba(219, 183, 130, 0.4), inset 0 0 15px rgba(91, 6, 9, 0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 15px rgba(219, 183, 130, 0.3);
       position: relative;
     }
 
     .message-card p {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.98rem;
-      line-height: 1.7;
-      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      font-weight: 500;
       font-style: italic;
       color: var(--rojo-tinto);
       text-align: center;
@@ -105,81 +121,87 @@
 
     .message-card .rose-icon {
       font-size: 2rem;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       display: block;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
     }
 
     /* Reproductor de Música */
     .music-player {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(20, 1, 3, 0.6);
       border: 1px solid var(--dorado-calido);
       border-radius: 30px;
-      padding: 8px 18px;
+      padding: 8px 20px;
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin-top: 15px;
-      box-shadow: 0 0 10px rgba(219, 183, 130, 0.3);
+      margin-top: 18px;
+      box-shadow: 0 0 10px rgba(219, 183, 130, 0.25);
     }
 
     .play-btn {
       background: linear-gradient(135deg, var(--crema-marfil), var(--dorado-calido));
       border: none;
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--rojo-tinto);
       font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
-    /* Banners Rojos Elegantes */
+    /* Banners de sección uniformes */
     .red-banner {
-      background: linear-gradient(135deg, var(--rojo-tinto) 0%, var(--rojo-profundo) 100%);
-      border: 2px solid var(--dorado-calido);
-      border-radius: 30px;
-      padding: 10px 20px;
-      margin: 25px auto 12px;
+      background: linear-gradient(135deg, var(--rojo-tinto) 0%, #3e0306 100%);
+      border: 1.5px solid var(--dorado-calido);
+      border-radius: 25px;
+      padding: 8px 24px;
+      margin: 25px auto 10px;
       display: inline-block;
-      min-width: 200px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 8px rgba(219, 183, 130, 0.2);
     }
 
     .red-banner span {
       font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       color: var(--dorado-calido);
       letter-spacing: 2px;
       font-weight: 700;
+      text-transform: uppercase;
     }
 
     .names-list {
-      font-size: 1.05rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.98rem;
       color: var(--crema-marfil);
-      line-height: 1.6;
-      font-weight: 500;
+      line-height: 1.7;
+      font-weight: 600;
+      letter-spacing: 1px;
       margin-bottom: 10px;
     }
 
     .character-icon {
-      font-size: 2rem;
-      margin: 8px 0;
+      font-size: 1.8rem;
+      margin: 6px 0;
       display: block;
-      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8));
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.7));
     }
 
     /* Marco Elegante del Nombre */
     .name-badge {
-      background: linear-gradient(180deg, rgba(91,6,9,0.9) 0%, rgba(40,1,3,0.95) 100%);
-      border: 3px double var(--dorado-calido);
-      border-radius: 25px;
-      padding: 20px 15px;
+      background: linear-gradient(180deg, rgba(91,6,9,0.95) 0%, rgba(40,1,3,0.98) 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(219, 183, 130, 0.3);
+      outline-offset: -6px;
+      border-radius: 22px;
+      padding: 24px 16px;
       margin: 25px 0;
-      box-shadow: 0 0 20px rgba(219, 183, 130, 0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 20px rgba(219, 183, 130, 0.25);
     }
 
     /* Reloj de Cuenta Regresiva */
@@ -196,7 +218,7 @@
       border-radius: 12px;
       padding: 10px 6px;
       min-width: 72px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     .time-box span {
@@ -212,22 +234,25 @@
       color: var(--dorado-calido);
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-weight: 600;
     }
 
-    /* Botones Dorados */
+    /* Botones Dorados con efecto Brillo */
     .btn-gold {
       display: inline-block;
-      background: linear-gradient(135deg, var(--crema-marfil) 0%, var(--dorado-calido) 100%);
-      color: #120003;
+      background: linear-gradient(135deg, var(--crema-marfil) 0%, var(--dorado-calido) 50%, #c49c63 100%);
+      color: #200103;
       font-family: 'Cinzel', serif;
       font-weight: 800;
-      font-size: 0.95rem;
-      padding: 14px 28px;
+      font-size: 0.92rem;
+      letter-spacing: 1px;
+      padding: 13px 28px;
       border-radius: 30px;
       text-decoration: none;
       margin-top: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5), 0 0 10px rgba(219, 183, 130, 0.4);
-      transition: transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 12px rgba(219, 183, 130, 0.3);
+      transition: all 0.2s ease-in-out;
+      border: 1px solid var(--dorado-brillo);
     }
 
     .btn-gold:active {
@@ -244,24 +269,24 @@
 
     /* Cúpula de la Rosa Encantada */
     .enchanted-rose-dome {
-      width: 120px;
-      height: 140px;
+      width: 110px;
+      height: 130px;
       margin: 15px auto 5px;
-      background: radial-gradient(circle, rgba(255,100,120,0.2) 0%, rgba(0,0,0,0) 70%);
-      border-radius: 60px 60px 10px 10px;
-      border: 2px solid rgba(219, 183, 130, 0.5);
-      border-bottom: 6px solid var(--dorado-calido);
+      background: radial-gradient(circle, rgba(219, 183, 130, 0.15) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 55px 55px 10px 10px;
+      border: 1.5px solid rgba(219, 183, 130, 0.5);
+      border-bottom: 5px solid var(--dorado-calido);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3.5rem;
-      box-shadow: 0 0 20px rgba(255, 50, 80, 0.4);
+      font-size: 3.2rem;
+      box-shadow: 0 0 18px rgba(219, 183, 130, 0.3);
     }
 
     .rose-divider {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin: 20px 0;
-      filter: drop-shadow(0 0 6px rgba(200,20,50,0.6));
+      filter: drop-shadow(0 0 6px rgba(219, 183, 130, 0.4));
     }
   </style>
 </head>
@@ -310,13 +335,13 @@
 
     <!-- Nombre de la Quinceañera -->
     <div class="name-badge">
-      <p style="font-family: 'Cinzel'; font-size: 0.9rem; letter-spacing: 2px; color: var(--crema-marfil);">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
+      <p style="font-family: 'Cinzel'; font-size: 0.85rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 600;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
       <h2 class="name-title">María Fernanda Guadalupe<br>Cacho Valverde</h2>
-      <div style="font-size: 1.5rem; color: var(--dorado-calido);">🦋 🌹 🦋</div>
+      <div style="font-size: 1.4rem; color: var(--dorado-calido);">✨ 🌹 ✨</div>
     </div>
 
     <!-- Cuenta Regresiva -->
-    <div style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--dorado-calido); margin-top: 25px;">
+    <div style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--dorado-brillo); margin-top: 25px; text-shadow: 0 0 10px rgba(219, 183, 130, 0.4);">
       Tan solo faltan...
     </div>
     <div class="timer-container">
@@ -328,12 +353,12 @@
 
     <!-- Fecha y Recepción -->
     <div class="card-frame">
-      <h3 style="font-family: 'Cinzel'; font-size: 1.4rem; color: var(--dorado-calido);">Sábado, 7 de Noviembre de 2026</h3>
+      <h3 style="font-family: 'Cinzel'; font-size: 1.35rem; color: var(--dorado-brillo); letter-spacing: 1px;">Sábado, 7 de Noviembre de 2026</h3>
       
       <div style="margin-top: 15px;">
         <span style="font-size: 2rem;">🏰</span>
-        <p style="font-size: 1.1rem; font-weight: 600; color: var(--crema-marfil);">Recepción:</p>
-        <p style="font-size: 1.2rem; color: var(--dorado-calido); font-family: 'Cinzel'; margin-top: 3px;"><b>Eventos JV</b></p>
+        <p style="font-size: 1rem; font-weight: 600; color: var(--crema-marfil); font-family: 'Cinzel'; margin-top: 5px;">Recepción:</p>
+        <p style="font-size: 1.25rem; color: var(--dorado-brillante); font-family: 'Cinzel'; margin-top: 3px; font-weight: 700;">Eventos JV</p>
       </div>
 
       <!-- Dirección Completa -->
@@ -350,8 +375,8 @@
     <!-- Código de Vestimenta -->
     <div class="card-frame">
       <div class="red-banner" style="margin-top: 0;"><span>Código de Vestimenta</span></div>
-      <p style="font-size: 1.15rem; margin-top: 10px; color: var(--crema-marfil);"><b>Sport Elegante 👔👗</b></p>
-      <p style="font-size: 0.9rem; margin-top: 10px; color: var(--crema-marfil); line-height: 1.4;">
+      <p style="font-size: 1.1rem; margin-top: 10px; color: var(--crema-marfil); font-family: 'Cinzel'; font-weight: 600;">Sport Elegante 👔👗</p>
+      <p style="font-size: 0.88rem; margin-top: 10px; color: var(--crema-marfil); line-height: 1.4; font-weight: 500;">
         🚫 <i>Prohibido vestir en color <b>champagne</b> y <b>vino</b>.</i>
       </p>
     </div>
@@ -359,8 +384,8 @@
     <!-- Regalos / Lluvia de Sobres -->
     <div class="card-frame">
       <div class="red-banner" style="margin-top: 0;"><span>Regalo</span></div>
-      <div style="font-size: 2rem; margin: 10px 0;">🎁 ✉️</div>
-      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil);">
+      <div style="font-size: 1.8rem; margin: 10px 0;">🎁 ✉️</div>
+      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil); font-weight: 400;">
         El mejor regalo será compartir este día contigo. Si deseas obsequiarme algo, serán bienvenidos tanto los regalos como la <b>lluvia de sobres</b>.
       </p>
     </div>
@@ -368,7 +393,7 @@
     <!-- Confirmación de Asistencia -->
     <div class="card-frame">
       <div class="subtitle">Confirma tu asistencia</div>
-      <p style="font-size: 0.88rem; margin: 10px 0 15px; color: var(--crema-marfil);">Será un honor contar con tu presencia.</p>
+      <p style="font-size: 0.88rem; margin: 10px 0 15px; color: var(--crema-marfil); font-weight: 400;">Será un honor contar con tu presencia.</p>
       
       <div class="btn-group">
         <a href="https://wa.me/51922957575?text=Hola%20Maria%20Fernanda,%20confirmo%20mi%20asistencia%20a%20tus%20XV%20Años" target="_blank" class="btn-gold">María Fernanda 💬</a>
