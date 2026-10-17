@@ -86,7 +86,7 @@
       margin-bottom: 12px;
     }
 
-    /* Cúpula Mágica Ilustrada sin flor interna */
+    /* Cúpula Mágica Ilustrada */
     .dome-frame {
       width: 150px;
       height: 170px;
@@ -102,7 +102,7 @@
       position: relative;
     }
 
-    /* ESTILO DE NOMBRE LEGIBLE */
+    /* ESTILO DEL NOMBRE PRINCIPAL */
     .main-name {
       font-family: 'Playfair Display', 'Cinzel', serif;
       font-size: 2.2rem;
@@ -197,38 +197,16 @@
       text-transform: uppercase;
     }
 
+    /* ESTILO TIPOGRÁFICO DE PADRES Y PADRINOS (SIMILAR AL INICIO) */
     .names-list {
-      font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
-      color: var(--crema-marfil);
-      line-height: 1.8;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    }
-
-    /* RECUADRO DEL NOMBRE */
-    .name-badge {
-      background: linear-gradient(180deg, rgba(91,6,9,0.95) 0%, rgba(40,1,3,0.98) 100%);
-      border: 2px solid var(--dorado-calido);
-      outline: 1px solid rgba(219, 183, 130, 0.35);
-      outline-offset: -6px;
-      border-radius: 22px;
-      padding: 26px 16px;
-      margin: 22px 0;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 20px rgba(219, 183, 130, 0.3);
-    }
-
-    .name-title {
       font-family: 'Playfair Display', 'Cinzel', serif;
-      font-size: 2.2rem;
+      font-size: 1.25rem;
+      color: var(--dorado-brillo);
+      line-height: 1.7;
       font-weight: 700;
       letter-spacing: 1px;
-      color: var(--dorado-brillo);
-      text-shadow: 0 0 14px rgba(248, 225, 166, 0.6), 2px 2px 4px rgba(0,0,0,0.9);
-      margin: 14px 0;
-      line-height: 1.35;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(248, 225, 166, 0.5), 1px 1px 3px rgba(0,0,0,0.8);
     }
 
     /* Sección Cuenta Regresiva */
@@ -484,7 +462,7 @@
 
   <div class="container">
     
-    <!-- ENCABEZADO CON CÚPULA MÁGICA Y NOMBRE -->
+    <!-- ENCABEZADO CON CÚPULA MÁGICA Y NOMBRE PRINCIPAL -->
     <div class="header-dome-container">
       <div class="top-header-title">Mis Quince Años</div>
       
@@ -495,7 +473,7 @@
 
       <p style="font-family: 'Cinzel'; font-size: 0.82rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 700; margin-top: 10px;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
       
-      <!-- NOMBRE -->
+      <!-- NOMBRE DE LA QUINCEAÑERA -->
       <h1 class="main-name">Maria F. G.<br>Cacho Valverde</h1>
       
       <div class="music-player">
@@ -530,14 +508,6 @@
         NOMBRE DEL PADRINO<br>
         NOMBRE DE LA PADRINA
       </div>
-    </div>
-
-    <!-- RECUADRO DE INVITACIÓN AL EVENTO CON EL NOMBRE -->
-    <div class="name-badge">
-      <p style="font-family: 'Cinzel'; font-size: 0.82rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 700;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
-      
-      <!-- NOMBRE -->
-      <h2 class="name-title">Maria F. G.<br>Cacho Valverde</h2>
     </div>
 
     <!-- Cuenta Regresiva y El Gran Día -->
