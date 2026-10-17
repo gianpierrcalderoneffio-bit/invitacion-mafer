@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis XV Años - Maria F. G. Cacho Valverde</title>
+  <!-- Fuentes de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700;800;900&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Paleta de colores oficial */
+      --rojo-tinto: #5b0609;        /* Centro / Tarjetas */
+      --rojo-profundo: #280103;     /* Fondo principal */
+      --dorado-calido: #dbb782;     /* Bordes y Acentos */
+      --dorado-brillo: #f8e1a6;     /* Destellos */
+      --crema-marfil: #efe5d5;      /* Textos claros y tarjetas de detalles */
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--rojo-profundo);
+      background-image: radial-gradient(circle at 50% 15%, #4a0307 0%, var(--rojo-profundo) 85%);
+      color: var(--dorado-calido);
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      padding-bottom: 60px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* EFECTO DE DESTELLOS FLOTANTES EN EL FONDO */
+    .sparkle {
+      position: fixed;
+      color: var(--dorado-brillo);
+      font-size: 1.2rem;
+      pointer-events: none;
+      animation: twinkle 4s infinite ease-in-out;
+      z-index: 1;
+      opacity: 0.8;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); filter: drop-shadow(0 0 2px var(--dorado-brillo)); }
+      50% { opacity: 1; transform: scale(1.3) rotate(15deg); filter: drop-shadow(0 0 12px var(--dorado-brillo)); }
+    }
+
+    .sp-1 { top: 10%; left: 8%; animation-delay: 0s; }
+    .sp-2 { top: 25%; right: 10%; animation-delay: 1s; }
+    .sp-3 { top: 45%; left: 5%; animation-delay: 2.2s; }
+    .sp-4 { top: 65%; right: 8%; animation-delay: 0.7s; }
+    .sp-5 { top: 85%; left: 12%; animation-delay: 1.5s; }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ENCABEZADO CON CÚPULA MÁGICA */
+    .header-dome-container {
+      background: linear-gradient(180deg, rgba(91, 6, 9, 0.95) 0%, rgba(40, 1, 3, 0.98) 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(219, 183, 130, 0.35);
+      outline-offset: -6px;
+      border-radius: 24px;
+      padding: 25px 18px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(219, 183, 130, 0.25);
+    }
+
+    .top-header-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      letter-spacing: 4px;
+      color: var(--dorado-brillo);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* Cúpula Mágica Ilustrada */
+    .dome-frame {
+      width: 150px;
+      height: 170px;
+      margin: 0 auto 15px;
+      border: 2px solid var(--dorado-calido);
+      border-radius: 75px 75px 12px 12px;
+      background: radial-gradient(circle at 50% 40%, rgba(248, 225, 166, 0.25) 0%, rgba(91, 6, 9, 0.85) 80%);
+      box-shadow: inset 0 0 20px rgba(248, 225, 166, 0.3), 0 0 18px rgba(219, 183, 130, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* ESTILO DEL NOMBRE PRINCIPAL */
+    .main-name {
+      font-family: 'Playfair Display', 'Cinzel', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--dorado-brillo);
+      text-shadow: 0 0 12px rgba(248, 225, 166, 0.6), 2px 2px 4px rgba(0,0,0,0.9);
+      line-height: 1.35;
+      margin: 12px 0;
+    }
+
+    /* Reproductor de Música */
+    .music-player {
+      background: rgba(20, 1, 3, 0.6);
+      border: 1px solid var(--dorado-calido);
+      border-radius: 30px;
+      padding: 8px 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+      box-shadow: 0 0 10px rgba(219, 183, 130, 0.25);
+    }
+
+    .play-btn {
+      background: linear-gradient(135deg, var(--crema-marfil), var(--dorado-calido));
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rojo-tinto);
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    /* Dedicatoria */
+    .message-card {
+      background: linear-gradient(180deg, #f5ecd8 0%, var(--crema-marfil) 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(91, 6, 9, 0.2);
+      outline-offset: -6px;
+      border-radius: 20px;
+      padding: 28px 20px;
+      margin: 22px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 20px rgba(219, 183, 130, 0.4);
+    }
+
+    .message-card p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--rojo-tinto);
+      text-align: center;
+    }
+
+    /* Tarjetas de Padres y Padrinos */
+    .card-frame {
+      background: linear-gradient(180deg, rgba(91, 6, 9, 0.92) 0%, rgba(40, 1, 3, 0.96) 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(219, 183, 130, 0.35);
+      outline-offset: -6px;
+      border-radius: 20px;
+      padding: 24px 20px;
+      margin: 22px 0;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 18px rgba(219, 183, 130, 0.3);
+      position: relative;
+    }
+
+    .red-banner {
+      background: linear-gradient(135deg, var(--rojo-tinto) 0%, #3e0306 100%);
+      border: 1.5px solid var(--dorado-calido);
+      border-radius: 25px;
+      padding: 8px 24px;
+      margin: 0 auto 14px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 8px rgba(219, 183, 130, 0.2);
+    }
+
+    .red-banner span {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--dorado-calido);
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* ESTILO TIPOGRÁFICO DE PADRES Y PADRINOS (SIMILAR AL INICIO) */
+    .names-list {
+      font-family: 'Playfair Display', 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--dorado-brillo);
+      line-height: 1.7;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(248, 225, 166, 0.5), 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    /* Sección Cuenta Regresiva */
+    .section-header-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      letter-spacing: 3px;
+      color: var(--dorado-brillo);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    .timer-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 12px 0 20px;
+    }
+
+    .time-box {
+      background: linear-gradient(180deg, var(--rojo-tinto) 0%, var(--rojo-profundo) 100%);
+      border: 1.5px solid var(--dorado-calido);
+      border-radius: 12px;
+      padding: 10px 6px;
+      min-width: 72px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .time-box span {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--crema-marfil);
+    }
+
+    .time-box label {
+      font-size: 0.65rem;
+      color: var(--dorado-calido);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    /* Título Cursivo "Los Detalles" */
+    .details-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: var(--dorado-brillo);
+      text-shadow: 0 0 15px rgba(248, 225, 166, 0.7);
+      margin: 25px 0 10px;
+      font-weight: normal;
+    }
+
+    /* Tarjetas Redondeadas "Los Detalles" */
+    .detail-card {
+      background: linear-gradient(180deg, #fdf8ef 0%, #efe5d5 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(91, 6, 9, 0.25);
+      outline-offset: -5px;
+      border-radius: 35px;
+      padding: 24px 20px;
+      margin: 20px 0;
+      color: var(--rojo-tinto);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.6), 0 0 15px rgba(219, 183, 130, 0.3);
+    }
+
+    .detail-card-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--rojo-tinto);
+      margin-bottom: 5px;
+    }
+
+    .venue-name {
+      font-family: 'Cinzel Decorative', 'Cinzel', serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--rojo-tinto);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 6px 0;
+    }
+
+    .detail-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      color: #3d0305;
+      line-height: 1.5;
+    }
+
+    /* Botones Dorados */
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--crema-marfil) 0%, var(--dorado-calido) 50%, #c49c63 100%);
+      color: #200103;
+      font-family: 'Cinzel', serif;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 1px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: all 0.2s ease-in-out;
+      border: 1px solid var(--dorado-brillo);
+      text-transform: uppercase;
+    }
+
+    .btn-gold:active {
+      transform: scale(0.96);
+    }
+
+    /* Sección de Regalos */
+    .gift-section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--crema-marfil);
+      line-height: 1.6;
+      margin: 25px 10px 12px;
+      text-transform: uppercase;
+    }
+
+    .gift-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 15px 0 25px;
+    }
+
+    .gift-box-card {
+      background: linear-gradient(180deg, rgba(91, 6, 9, 0.9) 0%, rgba(40, 1, 3, 0.95) 100%);
+      border: 2px solid var(--dorado-calido);
+      border-radius: 18px;
+      padding: 18px 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gift-icon-container {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #f5ecd8, var(--dorado-calido));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    }
+
+    .gift-box-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--crema-marfil);
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Tarjeta de Confirmación (RSVP) */
+    .rsvp-card {
+      background: linear-gradient(180deg, #fdf8ef 0%, #efe5d5 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(91, 6, 9, 0.25);
+      outline-offset: -5px;
+      border-radius: 40px;
+      padding: 30px 20px 25px;
+      margin: 35px 0 20px;
+      position: relative;
+      color: var(--rojo-tinto);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+
+    .wax-seal {
+      width: 48px;
+      height: 48px;
+      background: radial-gradient(circle, #dbb782 0%, #a67c42 100%);
+      border: 2px solid #f8e1a6;
+      border-radius: 50%;
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .rsvp-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--rojo-tinto);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+      align-items: center;
+    }
+
+    .btn-group .btn-gold {
+      width: 100%;
+      max-width: 280px;
+      margin-top: 0;
+    }
+
+    /* ROSA ENCANTADA FINAL (ÚNICA APARICIÓN EN LA INVITACIÓN) */
+    .rose-image-large {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--dorado-calido);
+      box-shadow: 0 0 35px rgba(248, 225, 166, 0.9), inset 0 0 15px rgba(0,0,0,0.5);
+      margin: 25px auto 10px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .rose-image-large:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DESTELLOS DORADOS PARPADEANTES EN EL FONDO -->
+  <div class="sparkle sp-1">✨</div>
+  <div class="sparkle sp-2">✦</div>
+  <div class="sparkle sp-3">✨</div>
+  <div class="sparkle sp-4">✦</div>
+  <div class="sparkle sp-5">✨</div>
+
+  <div class="container">
+    
+    <!-- ENCABEZADO CON CÚPULA MÁGICA Y NOMBRE PRINCIPAL -->
+    <div class="header-dome-container">
+      <div class="top-header-title">Mis Quince Años</div>
+      
+      <!-- Cúpula Ilustrada -->
+      <div class="dome-frame">
+        <div style="font-size: 3.5rem; filter: drop-shadow(0 0 10px var(--dorado-brillo));">👑</div>
+      </div>
+
+      <p style="font-family: 'Cinzel'; font-size: 0.82rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 700; margin-top: 10px;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
+      
+      <!-- NOMBRE DE LA QUINCEAÑERA -->
+      <h1 class="main-name">Maria F. G.<br>Cacho Valverde</h1>
+      
+      <div class="music-player">
+        <button class="play-btn" id="musicBtn" onclick="toggleMusic()">▶</button>
+        <span style="font-size: 0.82rem; font-weight: 600; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif;">Escuchar canción</span>
+      </div>
+      <audio id="bgMusic" loop preload="auto" src="./musica.mp3"></audio>
+    </div>
+
+    <!-- Dedicatoria -->
+    <div class="message-card">
+      <p>
+        "Hoy celebro el comienzo de una etapa maravillosa e inolvidable en mi vida. Al llegar a mis quince años, miro hacia atrás con profunda gratitud por cada recuerdo feliz y miro hacia el futuro con ilusión por todos los sueños que están por venir.<br><br>
+        Agradezco a Dios por guiar cada uno de mis pasos y colmar mi camino de bendiciones. A mis amados padres, por su amor incondicional, sus enseñanzas y por hacer posible este hermoso sueño. A mis queridos padrinos, por su cariño, apoyo y por acompañarme en este momento tan especial.<br><br>
+        Será un verdadero honor para mí compartir la magia de esta gran noche con las personas que más quiero."
+      </p>
+    </div>
+
+    <!-- Sección Mis Padres -->
+    <div class="card-frame">
+      <div class="red-banner"><span>Mis Padres</span></div>
+      <div class="names-list">
+        JUAN RAUL CACHO NAVARRETE<br>
+        RAQUEL VALVERDE FLORES
+      </div>
+    </div>
+
+    <!-- Sección Mis Padrinos -->
+    <div class="card-frame">
+      <div class="red-banner"><span>Mis Padrinos</span></div>
+      <div class="names-list">
+        NOMBRE DEL PADRINO<br>
+        NOMBRE DE LA PADRINA
+      </div>
+    </div>
+
+    <!-- Cuenta Regresiva y El Gran Día -->
+    <div class="section-header-title">La cuenta regresiva ha comenzado</div>
+    <div class="timer-container">
+      <div class="time-box"><span id="days">--</span><label>Días</label></div>
+      <div class="time-box"><span id="hours">--</span><label>Horas</label></div>
+      <div class="time-box"><span id="minutes">--</span><label>Minutos</label></div>
+      <div class="time-box"><span id="seconds">--</span><label>Segundos</label></div>
+    </div>
+
+    <div class="card-frame">
+      <div style="font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--dorado-brillo); text-shadow: 0 0 10px rgba(248, 225, 166, 0.5);">El Gran Día</div>
+      <h3 style="font-family: 'Cinzel'; font-size: 1.35rem; color: var(--crema-marfil); letter-spacing: 1.5px; font-weight: 800; margin-top: 8px;">SÁBADO, 7 DE NOVIEMBRE DE 2026</h3>
+    </div>
+
+    <!-- Título Cursivo "Los Detalles" -->
+    <h2 class="details-title">Los Detalles</h2>
+
+    <!-- Tarjeta Recepción -->
+    <div class="detail-card">
+      <h3 class="detail-card-title">Recepción</h3>
+      <div style="font-size: 2.2rem; margin: 6px 0;">🏰</div>
+      <div class="venue-name">EVENTOS JV</div>
+      <p class="detail-text" style="font-weight: 700; margin-bottom: 6px;">⏰ 7:00 PM</p>
+      <p class="detail-text">
+        📍 <b>Dirección:</b><br>Torres del Pacífico 294, Carabayllo 15319
+      </p>
+      <a href="https://maps.app.goo.gl/vy1NPnjoAZtWTRDR8" target="_blank" class="btn-gold">VER UBICACIÓN 📍</a>
+    </div>
+
+    <!-- Tarjeta Código de Vestimenta -->
+    <div class="detail-card">
+      <h3 class="detail-card-title">Dress Code</h3>
+      <div style="font-size: 2.2rem; margin: 4px 0;">👔 👗</div>
+      <p class="venue-name" style="font-size: 1.1rem; margin-top: 4px;">SPORT ELEGANTE</p>
+      <p class="detail-text" style="font-size: 0.85rem; margin-top: 8px;">
+        🚫 <i>Se reserva el color <b>champagne</b> y <b>vino</b>.</i>
+      </p>
+    </div>
+
+    <!-- Sección de Regalos -->
+    <div class="gift-section-title">
+      Tu presencia es mi verdadero regalo.<br>
+      <span style="font-weight: 400; font-size: 0.8rem; text-transform: none; color: var(--dorado-calido);">Pero si deseas darme un obsequio, tengo algunas opciones preparadas:</span>
+    </div>
+
+    <div class="gift-cards-grid">
+      <!-- Tarjeta Lluvia de Sobres -->
+      <div class="gift-box-card">
+        <div class="gift-icon-container">✉️</div>
+        <div class="gift-box-text">Tendremos lluvia de sobres en el evento</div>
+      </div>
+      <!-- Tarjeta Regalo de Preferencia -->
+      <div class="gift-box-card">
+        <div class="gift-icon-container">🎁</div>
+        <div class="gift-box-text">Puedes darme un regalo de tu preferencia</div>
+      </div>
+    </div>
+
+    <!-- Confirmación de Asistencia (RSVP) -->
+    <div class="rsvp-card">
+      <div class="wax-seal">👑</div>
+      <p class="rsvp-text">Espero contar contigo en este día tan especial para mí</p>
+      
+      <div class="btn-group">
+        <a href="https://wa.me/51922957575?text=Hola%20Maria%20Fernanda,%20confirmo%20mi%20asistencia%20a%20tus%20XV%20Años" target="_blank" class="btn-gold">Confirmar Asistencia (María Fernanda) 💬</a>
+        <a href="https://wa.me/51922957575?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20Años%20de%20Maria%20Fernanda" target="_blank" class="btn-gold">Confirmar Asistencia (Mamá) 💬</a>
+      </div>
+    </div>
+
+    <!-- CIERRE "TE ESPERAMOS" CON LA ROSA ENCANTADA -->
+    <div style="margin-top: 35px;">
+      <h2 style="font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--dorado-brillo); text-shadow: 0 0 15px rgba(248, 225, 166, 0.7);">Te esperamos...</h2>
+      <img src="./flor.jpeg" alt="Rosa Encantada Final" class="rose-image-large">
+    </div>
+
+  </div>
+
+  <!-- JavaScript para Música y Reloj -->
+  <script>
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      const musicBtn = document.getElementById('musicBtn');
+
+      if (music.paused) {
+        const playPromise = music.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            musicBtn.textContent = '❚❚';
+          }).catch(error => {
+            console.error("Error al reproducir audio:", error);
+            alert("Recuerda verificar que el archivo en GitHub se llame 'musica.mp3'.");
+          });
+        }
+      } else {
+        music.pause();
+        musicBtn.textContent = '▶';
+      }
+    }
+
+    const eventDate = new Date("2026-11-07T19:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+      document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
