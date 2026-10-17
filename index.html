@@ -14,7 +14,7 @@
       --rojo-profundo: #280103;     /* Fondo principal */
       --dorado-calido: #dbb782;     /* Bordes y Acentos */
       --dorado-brillo: #f8e1a6;     /* Destellos */
-      --crema-marfil: #efe5d5;      /* Textos claros y tarjeta mensaje */
+      --crema-marfil: #efe5d5;      /* Textos claros y tarjetas de detalles */
     }
 
     * {
@@ -25,7 +25,7 @@
 
     body {
       background-color: var(--rojo-profundo);
-      background-image: radial-gradient(circle at 50% 20%, #4a0307 0%, var(--rojo-profundo) 85%);
+      background-image: radial-gradient(circle at 50% 15%, #4a0307 0%, var(--rojo-profundo) 85%);
       color: var(--dorado-calido);
       font-family: 'Cinzel', serif;
       text-align: center;
@@ -64,123 +64,52 @@
       z-index: 2;
     }
 
-    /* Corona Real con destello */
-    .crown {
-      font-size: 2.2rem;
-      color: var(--dorado-brillo);
-      filter: drop-shadow(0 0 10px rgba(248, 225, 166, 0.8));
-      margin-top: 10px;
-      animation: sparkleGlow 3s infinite alternate;
-    }
-
-    @keyframes sparkleGlow {
-      0% { filter: drop-shadow(0 0 4px rgba(219, 183, 130, 0.4)); transform: scale(1); }
-      100% { filter: drop-shadow(0 0 18px rgba(248, 225, 166, 0.95)); transform: scale(1.06); }
-    }
-
-    /* Títulos Principales */
-    .main-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.8rem;
-      color: var(--dorado-brillo);
-      text-shadow: 0 0 15px rgba(248, 225, 166, 0.7), 2px 2px 4px rgba(0,0,0,0.8);
-      margin: 5px 0;
-      font-weight: normal;
-    }
-
-    .name-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.2rem;
-      color: var(--dorado-brillo);
-      text-shadow: 0 0 18px rgba(248, 225, 166, 0.8), 2px 2px 4px rgba(0,0,0,0.9);
-      margin: 12px 0;
-      line-height: 1.25;
-      font-weight: normal;
-    }
-
-    .subtitle {
-      font-family: 'Cinzel', serif;
-      letter-spacing: 3px;
-      font-size: 1rem;
-      color: var(--crema-marfil);
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    /* Tarjetas principales con bordes dobles */
-    .card-frame {
-      background: linear-gradient(180deg, rgba(91, 6, 9, 0.92) 0%, rgba(40, 1, 3, 0.96) 100%);
+    /* ENCABEZADO CON CÚPULA MÁGICA DE LA BELLA Y LA BESTIA */
+    .header-dome-container {
+      background: linear-gradient(180deg, rgba(91, 6, 9, 0.95) 0%, rgba(40, 1, 3, 0.98) 100%);
       border: 2px solid var(--dorado-calido);
       outline: 1px solid rgba(219, 183, 130, 0.35);
       outline-offset: -6px;
-      border-radius: 20px;
-      padding: 24px 20px;
-      margin: 22px 0;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 18px rgba(219, 183, 130, 0.3);
+      border-radius: 24px;
+      padding: 25px 18px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(219, 183, 130, 0.25);
+    }
+
+    .top-header-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      letter-spacing: 4px;
+      color: var(--dorado-brillo);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* Cúpula Mágica Ilustrada */
+    .dome-frame {
+      width: 170px;
+      height: 210px;
+      margin: 0 auto 15px;
+      border: 2px solid var(--dorado-calido);
+      border-radius: 85px 85px 12px 12px;
+      background: radial-gradient(circle at 50% 40%, rgba(248, 225, 166, 0.25) 0%, rgba(91, 6, 9, 0.85) 80%);
+      box-shadow: inset 0 0 20px rgba(248, 225, 166, 0.3), 0 0 18px rgba(219, 183, 130, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       position: relative;
     }
 
-    /* Recuadro de Dedicatoria */
-    .message-card {
-      background: linear-gradient(180deg, #f5ecd8 0%, var(--crema-marfil) 100%);
-      border: 2px solid var(--dorado-calido);
-      outline: 1px solid rgba(91, 6, 9, 0.2);
-      outline-offset: -6px;
-      border-radius: 20px;
-      padding: 30px 22px;
-      margin: 22px 0;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 20px rgba(219, 183, 130, 0.4);
-      position: relative;
-    }
-
-    .message-card p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.75;
-      font-weight: 500;
-      font-style: italic;
-      color: var(--rojo-tinto);
-      text-align: center;
-    }
-
-    /* IMÁGENES DE LA ROSA */
-    .rose-image {
-      width: 75px;
-      height: 75px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid var(--dorado-calido);
-      box-shadow: 0 0 14px rgba(248, 225, 166, 0.7);
-      margin: 8px auto 14px;
-      display: block;
-    }
-
-    .rose-image-divider {
-      width: 65px;
-      height: 65px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1.5px solid var(--dorado-calido);
-      box-shadow: 0 0 12px rgba(219, 183, 130, 0.6);
-      margin: 12px auto;
-      display: block;
-    }
-
-    /* IMAGEN FINAL GRANDE DE LA ROSA ENCANTADA */
-    .rose-image-large {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid var(--dorado-calido);
-      box-shadow: 0 0 35px rgba(248, 225, 166, 0.9), inset 0 0 15px rgba(0,0,0,0.5);
-      margin: 25px auto 10px;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .rose-image-large:hover {
-      transform: scale(1.03);
+    .main-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      color: var(--dorado-brillo);
+      text-shadow: 0 0 15px rgba(248, 225, 166, 0.8), 2px 2px 4px rgba(0,0,0,0.9);
+      line-height: 1.25;
+      margin: 10px 0;
+      font-weight: normal;
     }
 
     /* Reproductor de Música */
@@ -192,7 +121,7 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin-top: 18px;
+      margin-top: 8px;
       box-shadow: 0 0 10px rgba(219, 183, 130, 0.25);
     }
 
@@ -212,13 +141,58 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
 
-    /* Banners de sección */
+    /* Dedicatoria */
+    .message-card {
+      background: linear-gradient(180deg, #f5ecd8 0%, var(--crema-marfil) 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(91, 6, 9, 0.2);
+      outline-offset: -6px;
+      border-radius: 20px;
+      padding: 26px 20px;
+      margin: 22px 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 20px rgba(219, 183, 130, 0.4);
+    }
+
+    .message-card p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--rojo-tinto);
+      text-align: center;
+    }
+
+    .rose-image {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--dorado-calido);
+      box-shadow: 0 0 12px rgba(248, 225, 166, 0.7);
+      margin: 0 auto 12px;
+      display: block;
+    }
+
+    /* Tarjetas de Padres y Padrinos */
+    .card-frame {
+      background: linear-gradient(180deg, rgba(91, 6, 9, 0.92) 0%, rgba(40, 1, 3, 0.96) 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(219, 183, 130, 0.35);
+      outline-offset: -6px;
+      border-radius: 20px;
+      padding: 24px 20px;
+      margin: 22px 0;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 18px rgba(219, 183, 130, 0.3);
+      position: relative;
+    }
+
     .red-banner {
       background: linear-gradient(135deg, var(--rojo-tinto) 0%, #3e0306 100%);
       border: 1.5px solid var(--dorado-calido);
       border-radius: 25px;
       padding: 8px 24px;
-      margin: 0 auto 14px;
+      margin: 0 auto 12px;
       display: inline-block;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5), 0 0 8px rgba(219, 183, 130, 0.2);
     }
@@ -232,7 +206,6 @@
       text-transform: uppercase;
     }
 
-    /* Nombres en Tipografía Clásica */
     .names-list {
       font-family: 'Cinzel', serif;
       font-size: 1.05rem;
@@ -244,24 +217,34 @@
       text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     }
 
-    /* Marco del Nombre de la Quinceañera */
-    .name-badge {
-      background: linear-gradient(180deg, rgba(91,6,9,0.95) 0%, rgba(40,1,3,0.98) 100%);
-      border: 2px solid var(--dorado-calido);
-      outline: 1px solid rgba(219, 183, 130, 0.35);
-      outline-offset: -6px;
-      border-radius: 22px;
-      padding: 24px 16px;
-      margin: 22px 0;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 20px rgba(219, 183, 130, 0.3);
+    .rose-image-divider {
+      width: 55px;
+      height: 55px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1.5px solid var(--dorado-calido);
+      box-shadow: 0 0 10px rgba(219, 183, 130, 0.6);
+      margin: 10px auto;
+      display: block;
     }
 
-    /* Reloj de Cuenta Regresiva */
+    /* Sección Cuenta Regresiva y El Gran Día */
+    .section-header-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      letter-spacing: 3px;
+      color: var(--dorado-brillo);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
     .timer-container {
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin: 18px 0 10px;
+      margin: 12px 0 20px;
     }
 
     .time-box {
@@ -289,16 +272,51 @@
       font-weight: 700;
     }
 
-    /* Nombre del Local estilo EVENTOS JV */
-    .venue-title {
-      font-family: 'Cinzel Decorative', 'Cinzel', serif;
-      font-size: 1.5rem;
+    /* Título Script Cursivo "Los Detalles" */
+    .details-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
       color: var(--dorado-brillo);
+      text-shadow: 0 0 15px rgba(248, 225, 166, 0.7);
+      margin: 25px 0 10px;
+      font-weight: normal;
+    }
+
+    /* Tarjetas Redondeadas "Los Detalles" */
+    .detail-card {
+      background: linear-gradient(180deg, #fdf8ef 0%, #efe5d5 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(91, 6, 9, 0.25);
+      outline-offset: -5px;
+      border-radius: 35px;
+      padding: 24px 20px;
+      margin: 20px 0;
+      color: var(--rojo-tinto);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.6), 0 0 15px rgba(219, 183, 130, 0.3);
+    }
+
+    .detail-card-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--rojo-tinto);
+      margin-bottom: 5px;
+    }
+
+    .venue-name {
+      font-family: 'Cinzel Decorative', 'Cinzel', serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--rojo-tinto);
       letter-spacing: 2px;
-      font-weight: 700;
-      text-shadow: 0 0 10px rgba(248, 225, 166, 0.6);
-      margin-top: 4px;
       text-transform: uppercase;
+      margin: 6px 0;
+    }
+
+    .detail-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      color: #3d0305;
+      line-height: 1.5;
     }
 
     /* Botones Dorados */
@@ -308,13 +326,13 @@
       color: #200103;
       font-family: 'Cinzel', serif;
       font-weight: 800;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       letter-spacing: 1px;
-      padding: 13px 28px;
+      padding: 12px 24px;
       border-radius: 30px;
       text-decoration: none;
-      margin-top: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5), 0 0 12px rgba(219, 183, 130, 0.3);
+      margin-top: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
       transition: all 0.2s ease-in-out;
       border: 1px solid var(--dorado-brillo);
       text-transform: uppercase;
@@ -324,12 +342,125 @@
       transform: scale(0.96);
     }
 
+    /* Sección de Regalos con Dos Tarjetas Lado a Lado */
+    .gift-section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--crema-marfil);
+      line-height: 1.6;
+      margin: 25px 10px 12px;
+      text-transform: uppercase;
+    }
+
+    .gift-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 15px 0 25px;
+    }
+
+    .gift-box-card {
+      background: linear-gradient(180deg, rgba(91, 6, 9, 0.9) 0%, rgba(40, 1, 3, 0.95) 100%);
+      border: 2px solid var(--dorado-calido);
+      border-radius: 18px;
+      padding: 18px 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gift-icon-container {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #f5ecd8, var(--dorado-calido));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    }
+
+    .gift-box-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--crema-marfil);
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Tarjeta de Confirmación Ovalada con Sello */
+    .rsvp-card {
+      background: linear-gradient(180deg, #fdf8ef 0%, #efe5d5 100%);
+      border: 2px solid var(--dorado-calido);
+      outline: 1px solid rgba(91, 6, 9, 0.25);
+      outline-offset: -5px;
+      border-radius: 40px;
+      padding: 30px 20px 25px;
+      margin: 35px 0 20px;
+      position: relative;
+      color: var(--rojo-tinto);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+
+    .wax-seal {
+      width: 48px;
+      height: 48px;
+      background: radial-gradient(circle, #dbb782 0%, #a67c42 100%);
+      border: 2px solid #f8e1a6;
+      border-radius: 50%;
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .rsvp-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--rojo-tinto);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
     .btn-group {
       display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
       margin-top: 15px;
+      align-items: center;
+    }
+
+    .btn-group .btn-gold {
+      width: 100%;
+      max-width: 280px;
+      margin-top: 0;
+    }
+
+    .rose-image-large {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--dorado-calido);
+      box-shadow: 0 0 30px rgba(248, 225, 166, 0.85);
+      margin: 25px auto 10px;
+      display: block;
     }
   </style>
 </head>
@@ -344,20 +475,27 @@
 
   <div class="container">
     
-    <!-- Encabezado con Corona y Música -->
-    <div class="card-frame">
-      <div class="crown">👑</div>
-      <h1 class="main-title">Mis XV Años</h1>
-      <div class="subtitle">Te invito a celebrar</div>
+    <!-- ENCABEZADO CON CÚPULA MÁGICA Y TITULARES -->
+    <div class="header-dome-container">
+      <div class="top-header-title">Mis Quince Años</div>
+      
+      <!-- Cúpula Ilustrada con la Rosa y Silueta -->
+      <div class="dome-frame">
+        <div style="font-size: 3rem; filter: drop-shadow(0 0 8px var(--dorado-brillo));">👑</div>
+        <img src="./flor.jpeg" alt="Rosa Encantada" style="width: 65px; height: 65px; object-fit: cover; border-radius: 50%; border: 1.5px solid var(--dorado-calido); margin-top: 8px;">
+      </div>
+
+      <p style="font-family: 'Cinzel'; font-size: 0.82rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 700; margin-top: 10px;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR A:</p>
+      <h1 class="main-name">María Fernanda Guadalupe<br>Cacho Valverde</h1>
       
       <div class="music-player">
         <button class="play-btn" id="musicBtn" onclick="toggleMusic()">▶</button>
-        <span style="font-size: 0.85rem; font-weight: 600; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif;">Dale play para escuchar la canción</span>
+        <span style="font-size: 0.82rem; font-weight: 600; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif;">Escuchar canción</span>
       </div>
       <audio id="bgMusic" loop preload="auto" src="./musica.mp3"></audio>
     </div>
 
-    <!-- Dedicatoria con Imagen de la Rosa -->
+    <!-- Dedicatoria -->
     <div class="message-card">
       <img src="./flor.jpeg" alt="Rosa Encantada" class="rose-image">
       <p>
@@ -387,17 +525,8 @@
       </div>
     </div>
 
-    <!-- Nombre de la Quinceañera -->
-    <div class="name-badge">
-      <p style="font-family: 'Cinzel'; font-size: 0.85rem; letter-spacing: 2px; color: var(--crema-marfil); font-weight: 700;">TIENEN EL HONOR DE INVITARLOS A CELEBRAR LOS XV AÑOS DE:</p>
-      <h2 class="name-title">María Fernanda Guadalupe<br>Cacho Valverde</h2>
-      <img src="./flor.jpeg" alt="Rosa Encantada" class="rose-image-divider">
-    </div>
-
-    <!-- Cuenta Regresiva -->
-    <div style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--dorado-brillo); margin-top: 25px; text-shadow: 0 0 12px rgba(248, 225, 166, 0.6);">
-      Tan solo faltan...
-    </div>
+    <!-- Cuenta Regresiva y El Gran Día -->
+    <div class="section-header-title">La cuenta regresiva ha comenzado</div>
     <div class="timer-container">
       <div class="time-box"><span id="days">--</span><label>Días</label></div>
       <div class="time-box"><span id="hours">--</span><label>Horas</label></div>
@@ -405,54 +534,69 @@
       <div class="time-box"><span id="seconds">--</span><label>Segundos</label></div>
     </div>
 
-    <!-- Fecha y Recepción -->
     <div class="card-frame">
-      <h3 style="font-family: 'Cinzel'; font-size: 1.35rem; color: var(--dorado-brillo); letter-spacing: 1.5px; font-weight: 700;">Sábado, 7 de Noviembre de 2026</h3>
-      
-      <div style="margin-top: 18px;">
-        <p style="font-size: 0.95rem; font-weight: 700; color: var(--crema-marfil); font-family: 'Cinzel', serif; margin-top: 5px; letter-spacing: 1.5px; text-transform: uppercase;">Recepción:</p>
-        <p class="venue-title">EVENTOS JV</p>
-      </div>
+      <div style="font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--dorado-brillo); text-shadow: 0 0 10px rgba(248, 225, 166, 0.5);">El Gran Día</div>
+      <h3 style="font-family: 'Cinzel'; font-size: 1.35rem; color: var(--crema-marfil); letter-spacing: 1.5px; font-weight: 800; margin-top: 8px;">SÁBADO, 7 DE NOVIEMBRE DE 2026</h3>
+    </div>
 
-      <!-- Dirección Completa -->
-      <p style="margin-top: 14px; font-size: 0.92rem; color: var(--crema-marfil); line-height: 1.6; font-family: 'Montserrat', sans-serif;">
+    <!-- Título Script "Los Detalles" -->
+    <h2 class="details-title">Los Detalles</h2>
+
+    <!-- Tarjeta Recepción -->
+    <div class="detail-card">
+      <h3 class="detail-card-title">Recepción</h3>
+      <img src="./flor.jpeg" alt="Icono Recepción" style="width: 55px; height: 55px; border-radius: 50%; border: 1.5px solid var(--dorado-calido); margin: 6px auto; display: block;">
+      <div class="venue-name">EVENTOS JV</div>
+      <p class="detail-text" style="font-weight: 700; margin-bottom: 6px;">⏰ 7:00 PM</p>
+      <p class="detail-text">
         📍 <b>Dirección:</b><br>Torres del Pacífico 294, Carabayllo 15319
       </p>
-
-      <a href="https://maps.app.goo.gl/vy1NPnjoAZtWTRDR8" target="_blank" class="btn-gold">VER UBICACIÓN EN MAPS 📍</a>
+      <a href="https://maps.app.goo.gl/vy1NPnjoAZtWTRDR8" target="_blank" class="btn-gold">VER UBICACIÓN 📍</a>
     </div>
 
-    <!-- Código de Vestimenta -->
-    <div class="card-frame">
-      <div class="red-banner"><span>Código de Vestimenta</span></div>
-      <p style="font-size: 1.1rem; margin-top: 5px; color: var(--crema-marfil); font-family: 'Cinzel'; font-weight: 700; letter-spacing: 1px;">Sport Elegante 👔👗</p>
-      <p style="font-size: 0.88rem; margin-top: 10px; color: var(--crema-marfil); line-height: 1.4; font-family: 'Montserrat', sans-serif;">
-        🚫 <i>Prohibido vestir en color <b>champagne</b> y <b>vino</b>.</i>
+    <!-- Tarjeta Código de Vestimenta -->
+    <div class="detail-card">
+      <h3 class="detail-card-title">Dress Code</h3>
+      <div style="font-size: 2.2rem; margin: 4px 0;">👔 👗</div>
+      <p class="venue-name" style="font-size: 1.1rem; margin-top: 4px;">SPORT ELEGANTE</p>
+      <p class="detail-text" style="font-size: 0.85rem; margin-top: 8px;">
+        🚫 <i>Se reserva el color <b>champagne</b> y <b>vino</b>.</i>
       </p>
     </div>
 
-    <!-- Regalos / Lluvia de Sobres -->
-    <div class="card-frame">
-      <div class="red-banner"><span>Regalo</span></div>
-      <p style="font-size: 0.88rem; line-height: 1.6; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif; margin-top: 10px;">
-        El mejor regalo será compartir este día contigo. Si deseas obsequiarme algo, serán bienvenidos tanto los regalos como la <b>lluvia de sobres</b>.
-      </p>
+    <!-- Sección de Regalos (Estructura de Tarjetas Gemelas) -->
+    <div class="gift-section-title">
+      Tu presencia es mi verdadero regalo.<br>
+      <span style="font-weight: 400; font-size: 0.8rem; text-transform: none; color: var(--dorado-calido);">Pero si deseas darme un obsequio, tengo algunas opciones preparadas:</span>
     </div>
 
-    <!-- Confirmación de Asistencia -->
-    <div class="card-frame">
-      <div class="subtitle">Confirma tu asistencia</div>
-      <p style="font-size: 0.88rem; margin: 10px 0 15px; color: var(--crema-marfil); font-family: 'Montserrat', sans-serif;">Será un honor contar con tu presencia.</p>
-      
-      <div class="btn-group">
-        <a href="https://wa.me/51922957575?text=Hola%20Maria%20Fernanda,%20confirmo%20mi%20asistencia%20a%20tus%20XV%20Años" target="_blank" class="btn-gold">María Fernanda 💬</a>
-        <a href="https://wa.me/51922957575?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20Años%20de%20Maria%20Fernanda" target="_blank" class="btn-gold">Mamá 💬</a>
+    <div class="gift-cards-grid">
+      <!-- Tarjeta Lluvia de Sobres -->
+      <div class="gift-box-card">
+        <div class="gift-icon-container">✉️</div>
+        <div class="gift-box-text">Tendremos lluvia de sobres en el evento</div>
+      </div>
+      <!-- Tarjeta Regalo de Preferencia -->
+      <div class="gift-box-card">
+        <div class="gift-icon-container">🎁</div>
+        <div class="gift-box-text">Puedes darme un regalo de tu preferencia</div>
       </div>
     </div>
 
-    <!-- Cierre Te Esperamos CON LA FLOR FINAL EN TAMAÑO GRANDE -->
+    <!-- Confirmación de Asistencia (RSVP con Sello) -->
+    <div class="rsvp-card">
+      <div class="wax-seal">🌹</div>
+      <p class="rsvp-text">Espero contar contigo en este día tan especial para mí</p>
+      
+      <div class="btn-group">
+        <a href="https://wa.me/51922957575?text=Hola%20Maria%20Fernanda,%20confirmo%20mi%20asistencia%20a%20tus%20XV%20Años" target="_blank" class="btn-gold">Confirmar Asistencia (María Fernanda) 💬</a>
+        <a href="https://wa.me/51922957575?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20Años%20de%20Maria%20Fernanda" target="_blank" class="btn-gold">Confirmar Asistencia (Mamá) 💬</a>
+      </div>
+    </div>
+
+    <!-- Cierre Te Esperamos -->
     <div style="margin-top: 35px;">
-      <h2 class="main-title" style="font-size: 3.2rem;">Te esperamos...</h2>
+      <h2 class="main-name" style="font-size: 3.5rem;">Te esperamos...</h2>
       <img src="./flor.jpeg" alt="Rosa Encantada Final" class="rose-image-large">
     </div>
 
